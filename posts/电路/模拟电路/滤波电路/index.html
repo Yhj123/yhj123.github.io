@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+  <head>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+    <meta name="robots" content="noodp" />
+    <title>滤波电路 - Wiki</title><meta name="author" content="">
+<meta name="author-link" content="">
+<meta name="description" content="滤波电路 概述 滤波电路的功能是从众多的信号中选出需要的信号或滤除不需要的信号. 根据电路工作时是否需要电源，滤波电路分为 无源滤波器和有源滤波器 ；" /><meta name="keywords" content='draft' /><meta itemprop="name" content="滤波电路">
+<meta itemprop="description" content="滤波电路 概述 滤波电路的功能是从众多的信号中选出需要的信号或滤除不需要的信号. 根据电路工作时是否需要电源，滤波电路分为 无源滤波器和有源滤波器 ；"><meta itemprop="datePublished" content="2023-11-18T11:22:25+08:00" />
+<meta itemprop="dateModified" content="2023-11-18T11:22:25+08:00" />
+<meta itemprop="wordCount" content="1439">
+<meta itemprop="keywords" content="draft," /><meta property="og:title" content="滤波电路" />
+<meta property="og:description" content="滤波电路 概述 滤波电路的功能是从众多的信号中选出需要的信号或滤除不需要的信号. 根据电路工作时是否需要电源，滤波电路分为 无源滤波器和有源滤波器 ；" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://yhj123.github.io/posts/%E7%94%B5%E8%B7%AF/%E6%A8%A1%E6%8B%9F%E7%94%B5%E8%B7%AF/%E6%BB%A4%E6%B3%A2%E7%94%B5%E8%B7%AF/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-11-18T11:22:25+08:00" />
+<meta property="article:modified_time" content="2023-11-18T11:22:25+08:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="滤波电路"/>
+<meta name="twitter:description" content="滤波电路 概述 滤波电路的功能是从众多的信号中选出需要的信号或滤除不需要的信号. 根据电路工作时是否需要电源，滤波电路分为 无源滤波器和有源滤波器 ；"/>
+<meta name="application-name" content="FixIt">
+<meta name="apple-mobile-web-app-title" content="FixIt"><meta name="theme-color" data-light="#f8f8f8" data-dark="#252627" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="canonical" href="https://yhj123.github.io/posts/%E7%94%B5%E8%B7%AF/%E6%A8%A1%E6%8B%9F%E7%94%B5%E8%B7%AF/%E6%BB%A4%E6%B3%A2%E7%94%B5%E8%B7%AF/" /><link rel="prev" href="https://yhj123.github.io/posts/scientificamerican/%E5%A4%AA%E7%A9%BA%E6%B0%94%E5%80%99%E5%BB%BA%E6%A8%A1/" /><link rel="next" href="https://yhj123.github.io/posts/csharp/ref%E5%85%B3%E9%94%AE%E5%AD%97/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "滤波电路",
+    "inLanguage": "zh-CN",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https:\/\/yhj123.github.io\/posts\/%E7%94%B5%E8%B7%AF\/%E6%A8%A1%E6%8B%9F%E7%94%B5%E8%B7%AF\/%E6%BB%A4%E6%B3%A2%E7%94%B5%E8%B7%AF\/"
+    },"genre": "posts","keywords": "draft","wordcount":  1439 ,
+    "url": "https:\/\/yhj123.github.io\/posts\/%E7%94%B5%E8%B7%AF\/%E6%A8%A1%E6%8B%9F%E7%94%B5%E8%B7%AF\/%E6%BB%A4%E6%B3%A2%E7%94%B5%E8%B7%AF\/","datePublished": "2023-11-18T11:22:25+08:00","dateModified": "2023-11-18T11:22:25+08:00","publisher": {
+      "@type": "Organization",
+      "name": ""},"description": ""
+  }
+  </script></head>
+  <body data-header-desktop="sticky" data-header-mobile="auto"><script>(window.localStorage?.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('dark' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'dark' === 'dark')) && document.body.setAttribute('data-theme', 'dark');</script><div class="wrapper" data-page-style="normal"><header class="desktop animate__faster" id="header-desktop">
+  <div class="header-wrapper">
+    <div class="header-title">
+      <a href="/" title="Wiki"><img loading="lazy" src="/fixit.min.svg" data-title="Wiki" data-alt="Wiki" class="logo" style="background: url(/svg/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const i of ['style', 'data-title','data-alt','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const i of ['style', 'data-title','data-alt','onerror','onload']){this.removeAttribute(i);}"/><span class="header-title-text">wiki</span></a><span class="header-subtitle"></span></div>
+    <nav>
+      <ul class="menu"><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/posts/"
+                
+                
+              >文章</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/categories/"
+                
+                
+              >分类</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/tags/"
+                
+                
+              >标签</a></li><li class="menu-item delimiter"></li><li class="menu-item theme-switch" title="切换主题">
+          <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+        </li></ul>
+    </nav>
+  </div>
+</header><header class="mobile animate__faster" id="header-mobile">
+  <div class="header-container">
+    <div class="header-wrapper">
+      <div class="header-title">
+        <a href="/" title="Wiki"><img loading="lazy" src="/fixit.min.svg" data-title="/fixit.min.svg" data-alt="/fixit.min.svg" class="logo" style="background: url(/svg/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const i of ['style', 'data-title','data-alt','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const i of ['style', 'data-title','data-alt','onerror','onload']){this.removeAttribute(i);}"/><span class="header-title-text">wiki</span></a><span class="header-subtitle"></span></div>
+      <div class="menu-toggle" id="menu-toggle-mobile">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+    <nav>
+      <ul class="menu" id="menu-mobile"><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/posts/"
+                  
+                  
+                >文章</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/categories/"
+                  
+                  
+                >分类</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/tags/"
+                  
+                  
+                >标签</a></li><li class="menu-item menu-system">
+          <span class="menu-system-item theme-switch" title="切换主题"><i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i></span></li>
+      </ul>
+    </nav>
+  </div>
+</header><main class="container"><aside class="toc" id="toc-auto"><h2 class="toc-title">目录&nbsp;<i class="toc-icon fa-solid fa-angle-down fa-fw" aria-hidden="true"></i></h2>
+      <div class="toc-content" id="toc-content-auto"></div></aside>
+
+  <aside class="aside-custom">
+    </aside>
+
+  <article class="page single">
+    <div class="header"><h1 class="single-title animate__animated animate__flipInX"><span title="转载" class="icon-repost"><i class="fa-solid fa-share fa-fw" aria-hidden="true"></i></span><span>滤波电路</span>
+      </h1></div><div class="post-meta">
+      <div class="post-meta-line"><span class="post-author"><span class="author"><i class="fa-solid fa-user-circle" aria-hidden="true"></i>
+      Anonymous</span></span>
+          <span class="post-category">收录于 <a href="/categories/%E7%94%B5%E5%AD%90%E7%94%B5%E8%B7%AF/"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> 电子电路</a></span></div>
+      <div class="post-meta-line"><span title="发布于 2023-11-18 11:22:25"><i class="fa-regular fa-calendar-alt fa-fw me-1" aria-hidden="true"></i><time datetime="2023-11-18">2023-11-18</time></span>&nbsp;<span title="更新于 2023-11-18 11:22:25"><i class="fa-regular fa-edit fa-fw me-1" aria-hidden="true"></i><time datetime="2023-11-18">2023-11-18</time></span>&nbsp;<span title="1439 字"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>约 1500 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>预计阅读 3 分钟</span>&nbsp;</div>
+    </div><div class="details toc" id="toc-static" data-kept="false">
+        <div class="details-summary toc-title">
+          <span>目录</span>
+          <span><i class="details-icon fa-solid fa-angle-right" aria-hidden="true"></i></span>
+        </div>
+        <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#概述">概述</a></li>
+    <li><a href="#无源滤波器">无源滤波器</a>
+      <ul>
+        <li><a href="#低通滤波器lpf">低通滤波器（LPF）</a></li>
+        <li><a href="#高通滤波器hpf">高通滤波器（HPF）</a></li>
+        <li><a href="#带通滤波器bpf">带通滤波器（BPF）</a></li>
+        <li><a href="#带阻滤波器bef">带阻滤波器（BEF）</a></li>
+      </ul>
+    </li>
+    <li><a href="#有源滤波器">有源滤波器</a>
+      <ul>
+        <li><a href="#heading-1"></a></li>
+      </ul>
+    </li>
+    <li><a href="#引用参考">引用参考</a></li>
+  </ul>
+</nav></div>
+      </div><div class="content" id="content"><h1 id="滤波电路">滤波电路</h1>
+<h2 id="概述">概述</h2>
+<ul>
+<li>滤波电路的功能是从众多的信号中选出需要的信号或滤除不需要的信号.</li>
+<li>根据电路工作时是否需要电源，滤波电路分为
+<span class="spoiler" >无源滤波器和有源滤波器</span>
+
+<style>
+
+.spoiler { 
+  color: rgb(103, 104, 103);
+  background: rgb(103, 104, 103);
+}
+.spoiler:hover{
+    color: rgb(156, 233, 156);
+    background: rgb(39, 39, 39);
+}
+</style>；根据电路选取信号的特点，滤波器可分为四种：
+<span class="spoiler" >低通滤波器、高通滤波器、带通滤波器和带阻滤波器</span>
+
+<style>
+
+.spoiler { 
+  color: rgb(103, 104, 103);
+  background: rgb(103, 104, 103);
+}
+.spoiler:hover{
+    color: rgb(156, 233, 156);
+    background: rgb(39, 39, 39);
+}
+</style>。</li>
+</ul>
+<h2 id="无源滤波器">无源滤波器</h2>
+<ul>
+<li>无源滤波器主要由电感、电容和电阻构成，所以又称为 RLC滤波电路.RLC滤波电路可分为低通滤波器、高通滤波器、带通滤波器和带阻滤波器</li>
+</ul>
+<h3 id="低通滤波器lpf">低通滤波器（LPF）</h3>
+<h4 id="概述-1">概述</h4>
+<ul>
+<li>低通滤波器的功能是选取低频信号，低通滤波器意为&quot;低频信号可以通过的电路&quot;.</li>
+</ul>
+<h4 id="低通滤波电路图例">低通滤波电路图例</h4>
+<img src="/img/电子电路/滤波电路_1.png" data-fancybox="gallery" width="100%" data-width="1000" data-height="2000">
+<ul>
+<li>图(a)所示为 单级RC低通滤波器.当电路输入各种频率的信号时，因为电容C对高频信号阻碍小(根据
+
+<link rel="stylesheet" href="/katex/katex.min.css" />
+<script defer src="/katex/katex.min.js"></script>
+<script defer src="/katex/auto-render.min.js" onload="renderMathInElement(document.body);"></script><span>
+  \(
+        X_c = \frac{1}{2πfC}
+    \)
+</span>
+
+), 高频信号经电容 C 旁路到地.电容 C 对低频信号阻碍大，低频信号不会旁路，而是输出去后级电路.</li>
+<li>图(b)所示为 多级RC低通滤波器.针对单级 RC 低通滤波器滤波效果达不到要求.这种滤波器能更彻底地滤掉高频信号.</li>
+<li>图(c)所示为 RL低通滤波器.当电路输入各种频率的信号时，因为电感对高频信号阻碍大(根据
+<span>
+  \(
+        X_L = 2πfL
+    \)
+</span>
+
+)，高频信号很难通过电感 L,而电感对低频信号阻碍小, 低频信号很容易通过电感去后级电路.</li>
+</ul>
+<h3 id="高通滤波器hpf">高通滤波器（HPF）</h3>
+<h4 id="概述-2">概述</h4>
+<ul>
+<li>高通滤波器的功能是选取高频信号，高通滤波器意为&quot;高频信号可以通过的电路&quot;.</li>
+</ul>
+<h4 id="高通滤波电路图例">高通滤波电路图例</h4>
+<img src="/img/电子电路/滤波电路_2.png" data-fancybox="gallery" width="500" data-width="1000" data-height="2000">
+<ul>
+<li>图(a)所示为 RC高通滤波器.当电路输入各种频率的信号时，因为电容 C 对高频信号阻碍小, 对低频信号阻碍大, 故低频信号难于通过电容 C，高频信号很容易通过电容去后级电路.</li>
+<li>图(b)所示为 RL高通滤波器.当电路输入各种频率的信号时, 因为电感 L 对高频信号阻碍大, 对低频信号阻碍小, 故低频信号很容易通过电感 L 旁路到地, 高频信号不容易被电感旁路而只能去后级电路.</li>
+<li>图(c)所示为 滤波效果更好的高通滤波器.电容C1、C2 对高频信号阻碍小、对低频信号阻碍大，低频信号难于通过，高频信号很容易通过；另外, 电感 L 对高频信号阻碍大, 对低频信号阻碍小，低频信号很容易被旁路掉，高频信号则不容易被旁路掉.</li>
+</ul>
+<h3 id="带通滤波器bpf">带通滤波器（BPF）</h3>
+<h4 id="概述-3">概述</h4>
+<ul>
+<li>带通滤波器的功能是选取某一段频率范围内的信号.</li>
+</ul>
+<h4 id="带通滤波器电路图例">带通滤波器电路图例</h4>
+<img src="/img/电子电路/滤波电路_3.png" data-fancybox="gallery" width="500" data-width="1000" data-height="2000">
+<ul>
+<li>图(a) 所示为 RC 元件构成的带通滤波器. 其中 R1, C1 构成低通滤波器，它的截止频率<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>为 f<sub>H</sub>，可以通过 f<sub>H</sub> 频率以下的信号. C2, R2 构成高通滤波器，它的截止频率为 f<sub>L</sub>，可以通过 f<sub>L</sub> 频率以上的信号.结果只有 f<sub>L</sub>～f<sub>H</sub> 频率范围的信号通过整个滤波器.</li>
+<li>图(b) 所示为 LC 串联谐振电路<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>构成的带通滤波器. L1, C1 谐振频率为 f0，它对频率为 f0 的信号阻碍小, 对其他频率的信号阻碍很大, 故只有频率为 f0 的信号可以通过. 该电路可以选取单一频率的信号, 如果想让 f0 附近频率的信号也能通过，就要降低谐振电路的 Q 值，Q 值越低，LC 电路的通频带越宽，能通过 f0 附近更多频率的信号.</li>
+<li>图(c) 所示为 LC并联谐振电路<sup id="fnref1:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>构成的带通滤波器, L1, C1谐振频率为 f0，它对频率为 f0 的信号阻碍很大，对其他频率的信号阻碍小，故其他频率的信号被旁路，只有频率为 f0 的信号不会被旁路，而去后级电路.</li>
+</ul>
+<h3 id="带阻滤波器bef">带阻滤波器（BEF）</h3>
+<h4 id="概述-4">概述</h4>
+<ul>
+<li>带阻滤波器的功能是选取某一段频率范围以外的信号. 带阻滤波器又称陷波器.</li>
+</ul>
+<h4 id="heading"></h4>
+<h2 id="有源滤波器">有源滤波器</h2>
+<ul>
+<li>有源滤波器一般由有源器件（运算放大器）和RC元件构成</li>
+</ul>
+<h3 id="heading-1"></h3>
+<h2 id="引用参考">引用参考</h2>
+<div class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1">
+<p>当带通滤波器输入0～f1频率范围的信号时，经滤波器后输出 f<sub>L</sub>～f<sub>H</sub> 频率范围的信号，这里的 f<sub>L</sub> 称为下限截止频率，f<sub>H</sub> 称为上限截止频率.&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:2">
+<p>
+
+
+    <a href="/posts/%E7%94%B5%E8%B7%AF/%E6%A8%A1%E6%8B%9F%E7%94%B5%E8%B7%AF/%E8%B0%90%E6%8C%AF%E7%94%B5%E8%B7%AF/" title="谐振电路">谐振电路</a>
+&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a>&#160;<a href="#fnref1:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</div>
+</div><div class="post-footer" id="post-footer">
+  <div class="post-info">
+    <div class="post-info-line">
+      <div class="post-info-mod">
+        <span title="更新于 2023-11-18 11:22:25">更新于 2023-11-18&nbsp;</span>
+      </div></div>
+    <div class="post-info-line">
+      <div class="post-info-md"></div>
+      <div class="post-info-share">
+        <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://yhj123.github.io/posts/%E7%94%B5%E8%B7%AF/%E6%A8%A1%E6%8B%9F%E7%94%B5%E8%B7%AF/%E6%BB%A4%E6%B3%A2%E7%94%B5%E8%B7%AF/" data-title="滤波电路" data-hashtags="draft"><i class="fa-brands fa-twitter fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://yhj123.github.io/posts/%E7%94%B5%E8%B7%AF/%E6%A8%A1%E6%8B%9F%E7%94%B5%E8%B7%AF/%E6%BB%A4%E6%B3%A2%E7%94%B5%E8%B7%AF/" data-hashtag="draft"><i class="fa-brands fa-facebook-square fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://yhj123.github.io/posts/%E7%94%B5%E8%B7%AF/%E6%A8%A1%E6%8B%9F%E7%94%B5%E8%B7%AF/%E6%BB%A4%E6%B3%A2%E7%94%B5%E8%B7%AF/" data-title="滤波电路"><i class="fa-brands fa-weibo fa-fw" aria-hidden="true"></i></a>
+  </span>
+      </div>
+    </div>
+  </div>
+
+  <div class="post-info-more">
+    <section class="post-tags"><i class="fa-solid fa-tags fa-fw me-1" aria-hidden="true"></i><a href='/tags/draft/' class="post-tag">draft</a></section>
+    <section>
+      <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+    </section>
+  </div>
+
+  <div class="post-nav"><a href="/posts/scientificamerican/%E5%A4%AA%E7%A9%BA%E6%B0%94%E5%80%99%E5%BB%BA%E6%A8%A1/" class="post-nav-item" rel="prev" title="太空气候建模"><i class="fa-solid fa-angle-left fa-fw" aria-hidden="true"></i>太空气候建模</a>
+      <a href="/posts/csharp/ref%E5%85%B3%E9%94%AE%E5%AD%97/" class="post-nav-item" rel="next" title="ref关键字">ref关键字<i class="fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+</article></main><footer class="footer">
+    <div class="footer-container"><div class="footer-line powered">由 <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreferrer" title="Hugo 0.111.3">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/hugo-fixit/FixIt" target="_blank" rel="external" title="FixIt v0.2.18-lts.4"><img class="fixit-icon" src="/fixit.min.svg" alt="FixIt logo" />&nbsp;FixIt</a>
+        </div><div class="footer-line copyright" itemscope itemtype="http://schema.org/CreativeWork"><i class="fa-regular fa-copyright fa-fw" aria-hidden="true"></i>
+            <span itemprop="copyrightYear">2023</span><span class="author" itemprop="copyrightHolder">
+              <a href="/"></a></span></div><div class="footer-line statistics"></div></div>
+  </footer></div><div class="widgets"><div class="fixed-buttons animate__faster d-none"><div class="fixed-button back-to-top" role="button" aria-label="回到顶部"><i class="fa-solid fa-arrow-up fa-fw" aria-hidden="true"></i><span class="variant-numeric d-none">0%</span>
+        </div></div><div id="mask"></div><noscript>
+    <div class="noscript-warning">FixIt 主题在启用 JavaScript 的情况下效果最佳。</div>
+  </noscript>
+</div><link rel="stylesheet" href="/lib/pace/themes/blue/pace-theme-minimal.css"><script src="/lib/sharer/sharer.min.js" async defer></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0.12/dist/fancybox.css">
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0.12/dist/fancybox.umd.js"></script><script src="/lib/pace/pace.min.js" async defer></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0.12/dist/fancybox.css">
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0.12/dist/fancybox.umd.js"></script><script>window.config={"code":{"copyTitle":"复制到剪贴板","editLockTitle":"锁定可编辑代码块","editUnLockTitle":"解锁可编辑代码块","editable":true,"maxShownLines":10},"comment":{"enable":false}};</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0.12/dist/fancybox.css">
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0.12/dist/fancybox.umd.js"></script><script src="/js/theme.min.js" defer></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0.12/dist/fancybox.css">
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0.12/dist/fancybox.umd.js"></script></body>
+</html>

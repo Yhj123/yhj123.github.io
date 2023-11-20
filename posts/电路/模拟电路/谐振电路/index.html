@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+  <head>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+    <meta name="robots" content="noodp" />
+    <title>谐振电路 - Wiki</title><meta name="author" content="">
+<meta name="author-link" content="">
+<meta name="description" content="谐振电路 概述 谐振电路是一种由电感和电容构成的电路，故又称为LC谐振电路.谐振电路分为 串联谐振电路 和 并联谐振电路. 串联谐振电路 概述 电容和电感头" /><meta name="keywords" content='draft' /><meta itemprop="name" content="谐振电路">
+<meta itemprop="description" content="谐振电路 概述 谐振电路是一种由电感和电容构成的电路，故又称为LC谐振电路.谐振电路分为 串联谐振电路 和 并联谐振电路. 串联谐振电路 概述 电容和电感头"><meta itemprop="datePublished" content="2023-11-18T11:22:25+08:00" />
+<meta itemprop="dateModified" content="2023-11-18T11:22:25+08:00" />
+<meta itemprop="wordCount" content="699">
+<meta itemprop="keywords" content="draft," /><meta property="og:title" content="谐振电路" />
+<meta property="og:description" content="谐振电路 概述 谐振电路是一种由电感和电容构成的电路，故又称为LC谐振电路.谐振电路分为 串联谐振电路 和 并联谐振电路. 串联谐振电路 概述 电容和电感头" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://yhj123.github.io/posts/%E7%94%B5%E8%B7%AF/%E6%A8%A1%E6%8B%9F%E7%94%B5%E8%B7%AF/%E8%B0%90%E6%8C%AF%E7%94%B5%E8%B7%AF/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-11-18T11:22:25+08:00" />
+<meta property="article:modified_time" content="2023-11-18T11:22:25+08:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="谐振电路"/>
+<meta name="twitter:description" content="谐振电路 概述 谐振电路是一种由电感和电容构成的电路，故又称为LC谐振电路.谐振电路分为 串联谐振电路 和 并联谐振电路. 串联谐振电路 概述 电容和电感头"/>
+<meta name="application-name" content="FixIt">
+<meta name="apple-mobile-web-app-title" content="FixIt"><meta name="theme-color" data-light="#f8f8f8" data-dark="#252627" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="canonical" href="https://yhj123.github.io/posts/%E7%94%B5%E8%B7%AF/%E6%A8%A1%E6%8B%9F%E7%94%B5%E8%B7%AF/%E8%B0%90%E6%8C%AF%E7%94%B5%E8%B7%AF/" /><link rel="prev" href="https://yhj123.github.io/posts/%E7%94%B5%E8%B7%AF/%E6%A8%A1%E6%8B%9F%E7%94%B5%E8%B7%AF/%E6%95%B4%E6%B5%81%E7%94%B5%E8%B7%AF/" /><link rel="next" href="https://yhj123.github.io/posts/scientificamerican/%E5%A4%AA%E7%A9%BA%E6%B0%94%E5%80%99%E5%BB%BA%E6%A8%A1/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "谐振电路",
+    "inLanguage": "zh-CN",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https:\/\/yhj123.github.io\/posts\/%E7%94%B5%E8%B7%AF\/%E6%A8%A1%E6%8B%9F%E7%94%B5%E8%B7%AF\/%E8%B0%90%E6%8C%AF%E7%94%B5%E8%B7%AF\/"
+    },"genre": "posts","keywords": "draft","wordcount":  699 ,
+    "url": "https:\/\/yhj123.github.io\/posts\/%E7%94%B5%E8%B7%AF\/%E6%A8%A1%E6%8B%9F%E7%94%B5%E8%B7%AF\/%E8%B0%90%E6%8C%AF%E7%94%B5%E8%B7%AF\/","datePublished": "2023-11-18T11:22:25+08:00","dateModified": "2023-11-18T11:22:25+08:00","publisher": {
+      "@type": "Organization",
+      "name": ""},"description": ""
+  }
+  </script></head>
+  <body data-header-desktop="sticky" data-header-mobile="auto"><script>(window.localStorage?.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('dark' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'dark' === 'dark')) && document.body.setAttribute('data-theme', 'dark');</script><div class="wrapper" data-page-style="normal"><header class="desktop animate__faster" id="header-desktop">
+  <div class="header-wrapper">
+    <div class="header-title">
+      <a href="/" title="Wiki"><img loading="lazy" src="/fixit.min.svg" data-title="Wiki" data-alt="Wiki" class="logo" style="background: url(/svg/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const i of ['style', 'data-title','data-alt','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const i of ['style', 'data-title','data-alt','onerror','onload']){this.removeAttribute(i);}"/><span class="header-title-text">wiki</span></a><span class="header-subtitle"></span></div>
+    <nav>
+      <ul class="menu"><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/posts/"
+                
+                
+              >文章</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/categories/"
+                
+                
+              >分类</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/tags/"
+                
+                
+              >标签</a></li><li class="menu-item delimiter"></li><li class="menu-item theme-switch" title="切换主题">
+          <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+        </li></ul>
+    </nav>
+  </div>
+</header><header class="mobile animate__faster" id="header-mobile">
+  <div class="header-container">
+    <div class="header-wrapper">
+      <div class="header-title">
+        <a href="/" title="Wiki"><img loading="lazy" src="/fixit.min.svg" data-title="/fixit.min.svg" data-alt="/fixit.min.svg" class="logo" style="background: url(/svg/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const i of ['style', 'data-title','data-alt','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const i of ['style', 'data-title','data-alt','onerror','onload']){this.removeAttribute(i);}"/><span class="header-title-text">wiki</span></a><span class="header-subtitle"></span></div>
+      <div class="menu-toggle" id="menu-toggle-mobile">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+    <nav>
+      <ul class="menu" id="menu-mobile"><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/posts/"
+                  
+                  
+                >文章</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/categories/"
+                  
+                  
+                >分类</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/tags/"
+                  
+                  
+                >标签</a></li><li class="menu-item menu-system">
+          <span class="menu-system-item theme-switch" title="切换主题"><i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i></span></li>
+      </ul>
+    </nav>
+  </div>
+</header><main class="container"><aside class="toc" id="toc-auto"><h2 class="toc-title">目录&nbsp;<i class="toc-icon fa-solid fa-angle-down fa-fw" aria-hidden="true"></i></h2>
+      <div class="toc-content" id="toc-content-auto"></div></aside>
+
+  <aside class="aside-custom">
+    </aside>
+
+  <article class="page single">
+    <div class="header"><h1 class="single-title animate__animated animate__flipInX"><span title="转载" class="icon-repost"><i class="fa-solid fa-share fa-fw" aria-hidden="true"></i></span><span>谐振电路</span>
+      </h1></div><div class="post-meta">
+      <div class="post-meta-line"><span class="post-author"><span class="author"><i class="fa-solid fa-user-circle" aria-hidden="true"></i>
+      Anonymous</span></span>
+          <span class="post-category">收录于 <a href="/categories/%E7%94%B5%E5%AD%90%E7%94%B5%E8%B7%AF/"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> 电子电路</a></span></div>
+      <div class="post-meta-line"><span title="发布于 2023-11-18 11:22:25"><i class="fa-regular fa-calendar-alt fa-fw me-1" aria-hidden="true"></i><time datetime="2023-11-18">2023-11-18</time></span>&nbsp;<span title="更新于 2023-11-18 11:22:25"><i class="fa-regular fa-edit fa-fw me-1" aria-hidden="true"></i><time datetime="2023-11-18">2023-11-18</time></span>&nbsp;<span title="699 字"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>约 700 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>预计阅读 2 分钟</span>&nbsp;</div>
+    </div><div class="details toc" id="toc-static" data-kept="false">
+        <div class="details-summary toc-title">
+          <span>目录</span>
+          <span><i class="details-icon fa-solid fa-angle-right" aria-hidden="true"></i></span>
+        </div>
+        <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#概述">概述</a></li>
+    <li><a href="#串联谐振电路">串联谐振电路</a>
+      <ul>
+        <li><a href="#概述-1">概述</a></li>
+        <li><a href="#串联谐振电路谐振时的特点">串联谐振电路谐振时的特点</a></li>
+      </ul>
+    </li>
+    <li><a href="#并联谐振电路">并联谐振电路</a>
+      <ul>
+        <li><a href="#概述-2">概述</a></li>
+        <li><a href="#并联谐振电路谐振时的特点">并联谐振电路谐振时的特点</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+      </div><div class="content" id="content"><h1 id="谐振电路">谐振电路</h1>
+<h2 id="概述">概述</h2>
+<ol>
+<li>谐振电路是一种由电感和电容构成的电路，故又称为LC谐振电路.谐振电路分为 串联谐振电路 和 并联谐振电路.</li>
+</ol>
+<h2 id="串联谐振电路">串联谐振电路</h2>
+<h3 id="概述-1">概述</h3>
+<ol>
+<li>电容和电感头尾相连，并与交流信号连接在一起就构成了串联谐振电路.</li>
+</ol>
+<a class="lightgallery" href="/img/%e7%94%b5%e5%ad%90%e7%94%b5%e8%b7%af/%e8%b0%90%e6%8c%af%e7%94%b5%e8%b7%af_1.png?size=large" data-thumbnail="/img/电子电路/谐振电路_1.png?size=small" data-sub-html="<h2>/img/电子电路/谐振电路_1.png</h2>"><img loading="lazy" src="/img/%e7%94%b5%e5%ad%90%e7%94%b5%e8%b7%af/%e8%b0%90%e6%8c%af%e7%94%b5%e8%b7%af_1.png" srcset="/img/%e7%94%b5%e5%ad%90%e7%94%b5%e8%b7%af/%e8%b0%90%e6%8c%af%e7%94%b5%e8%b7%af_1.png?size=small, /img/%e7%94%b5%e5%ad%90%e7%94%b5%e8%b7%af/%e8%b0%90%e6%8c%af%e7%94%b5%e8%b7%af_1.png?size=medium 1.5x, /img/%e7%94%b5%e5%ad%90%e7%94%b5%e8%b7%af/%e8%b0%90%e6%8c%af%e7%94%b5%e8%b7%af_1.png?size=large 2x" sizes="auto" data-title="/img/电子电路/谐振电路_1.png" data-alt="/img/电子电路/谐振电路_1.png" width="100" height="100" style="background: url(/svg/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const i of ['style', 'data-title','data-alt','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const i of ['style', 'data-title','data-alt','onerror','onload']){this.removeAttribute(i);}"/></a>
+<h3 id="串联谐振电路谐振时的特点">串联谐振电路谐振时的特点</h3>
+<a class="lightgallery" href="/img/%e7%94%b5%e5%ad%90%e7%94%b5%e8%b7%af/%e8%b0%90%e6%8c%af%e7%94%b5%e8%b7%af_3.png?size=large" data-thumbnail="/img/电子电路/谐振电路_3.png?size=small" data-sub-html="<h2>/img/电子电路/谐振电路_3.png</h2>"><img loading="lazy" src="/img/%e7%94%b5%e5%ad%90%e7%94%b5%e8%b7%af/%e8%b0%90%e6%8c%af%e7%94%b5%e8%b7%af_3.png" srcset="/img/%e7%94%b5%e5%ad%90%e7%94%b5%e8%b7%af/%e8%b0%90%e6%8c%af%e7%94%b5%e8%b7%af_3.png?size=small, /img/%e7%94%b5%e5%ad%90%e7%94%b5%e8%b7%af/%e8%b0%90%e6%8c%af%e7%94%b5%e8%b7%af_3.png?size=medium 1.5x, /img/%e7%94%b5%e5%ad%90%e7%94%b5%e8%b7%af/%e8%b0%90%e6%8c%af%e7%94%b5%e8%b7%af_3.png?size=large 2x" sizes="auto" data-title="/img/电子电路/谐振电路_3.png" data-alt="/img/电子电路/谐振电路_3.png" width="100" height="100" style="background: url(/svg/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const i of ['style', 'data-title','data-alt','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const i of ['style', 'data-title','data-alt','onerror','onload']){this.removeAttribute(i);}"/></a>
+<ol>
+<li>
+<p>在串联谐振电路中，当交流信号频率为某一值（f<sub>0</sub>）时，电路出现最大电流的现象称为串联谐振现象，简称串联谐振，这个频率称为谐振频率，用 f<sub>0</sub> 表示.
+
+<link rel="stylesheet" href="/katex/katex.min.css" />
+<script defer src="/katex/katex.min.js"></script>
+<script defer src="/katex/auto-render.min.js" onload="renderMathInElement(document.body);"></script><span>
+  \[
+        f_0 = \frac{1}{2π\sqrt{LC}}
+    \]
+</span>
+</p>
+</li>
+<li>
+<p>谐振时，电路中的电流最大，此时 LC 元件串在一起就像一只阻值很小的电阻，即串联谐振电路谐振时总阻抗最小（电阻、容抗和感抗统称为 阻抗，用Z表示，阻抗单位为Ω）.</p>
+</li>
+<li>
+<p>谐振时，电路中电感上的电压 U<sub>L</sub> 和电容上的电压 U<sub>C</sub> 都很高，往往比交流信号电压 U 大 Q 倍( U<sub>L</sub> = U<sub>C</sub> = Q × U，Q为品质因数,
+<span>
+  \(
+            Q = \frac{2πfL}{R}
+        \)
+</span>
+
+), 因此串联谐振又称为 
+<span class="spoiler" >电压谐振</span>
+
+<style>
+
+.spoiler { 
+  color: rgb(103, 104, 103);
+  background: rgb(103, 104, 103);
+}
+.spoiler:hover{
+    color: rgb(156, 233, 156);
+    background: rgb(39, 39, 39);
+}
+</style>。在谐振时，U<sub>L</sub> 与 U<sub>C</sub> 电压在数值上相等，但两者极性相反，故两电压之和（U<sub>L</sub> + U<sub>C</sub>）近似为零.</p>
+</li>
+</ol>
+<h2 id="并联谐振电路">并联谐振电路</h2>
+<h3 id="概述-2">概述</h3>
+<ol>
+<li>电容和电感头头相连、尾尾相接与交流信号连接起来就构成了并联谐振电路。</li>
+</ol>
+<a class="lightgallery" href="/img/%e7%94%b5%e5%ad%90%e7%94%b5%e8%b7%af/%e8%b0%90%e6%8c%af%e7%94%b5%e8%b7%af_2.png?size=large" data-thumbnail="/img/电子电路/谐振电路_2.png?size=small" data-sub-html="<h2>/img/电子电路/谐振电路_2.png</h2>"><img loading="lazy" src="/img/%e7%94%b5%e5%ad%90%e7%94%b5%e8%b7%af/%e8%b0%90%e6%8c%af%e7%94%b5%e8%b7%af_2.png" srcset="/img/%e7%94%b5%e5%ad%90%e7%94%b5%e8%b7%af/%e8%b0%90%e6%8c%af%e7%94%b5%e8%b7%af_2.png?size=small, /img/%e7%94%b5%e5%ad%90%e7%94%b5%e8%b7%af/%e8%b0%90%e6%8c%af%e7%94%b5%e8%b7%af_2.png?size=medium 1.5x, /img/%e7%94%b5%e5%ad%90%e7%94%b5%e8%b7%af/%e8%b0%90%e6%8c%af%e7%94%b5%e8%b7%af_2.png?size=large 2x" sizes="auto" data-title="/img/电子电路/谐振电路_2.png" data-alt="/img/电子电路/谐振电路_2.png" width="100" height="100" style="background: url(/svg/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const i of ['style', 'data-title','data-alt','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const i of ['style', 'data-title','data-alt','onerror','onload']){this.removeAttribute(i);}"/></a>
+<h3 id="并联谐振电路谐振时的特点">并联谐振电路谐振时的特点</h3>
+<a class="lightgallery" href="/img/%e7%94%b5%e5%ad%90%e7%94%b5%e8%b7%af/%e8%b0%90%e6%8c%af%e7%94%b5%e8%b7%af_4.png?size=large" data-thumbnail="/img/电子电路/谐振电路_4.png?size=small" data-sub-html="<h2>/img/电子电路/谐振电路_4.png</h2>"><img loading="lazy" src="/img/%e7%94%b5%e5%ad%90%e7%94%b5%e8%b7%af/%e8%b0%90%e6%8c%af%e7%94%b5%e8%b7%af_4.png" srcset="/img/%e7%94%b5%e5%ad%90%e7%94%b5%e8%b7%af/%e8%b0%90%e6%8c%af%e7%94%b5%e8%b7%af_4.png?size=small, /img/%e7%94%b5%e5%ad%90%e7%94%b5%e8%b7%af/%e8%b0%90%e6%8c%af%e7%94%b5%e8%b7%af_4.png?size=medium 1.5x, /img/%e7%94%b5%e5%ad%90%e7%94%b5%e8%b7%af/%e8%b0%90%e6%8c%af%e7%94%b5%e8%b7%af_4.png?size=large 2x" sizes="auto" data-title="/img/电子电路/谐振电路_4.png" data-alt="/img/电子电路/谐振电路_4.png" width="100" height="100" style="background: url(/svg/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const i of ['style', 'data-title','data-alt','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const i of ['style', 'data-title','data-alt','onerror','onload']){this.removeAttribute(i);}"/></a>
+<ol>
+<li>
+<p>在并联谐振电路中，当交流信号频率为某一值（f<sub>0</sub>）时，电路出现最小电流的现象称为并联谐振现象，简称并联谐振，这个频率称为谐振频率，用 f<sub>0</sub> 表示.
+<span>
+  \[
+        f_0 = \frac{1}{2π\sqrt{LC}}
+    \]
+</span>
+</p>
+</li>
+<li>
+<p>谐振时，电路中的电流I最小，此时 LC 元件并在一起就像一只阻值很大的电阻，即并联谐振电路谐振时总阻抗最大。</p>
+</li>
+<li>
+<p>谐振时，流过电容支路的电流 I<sub>C</sub> 和流过电感支路的电流 I<sub>L</sub> 比总电流 I 大很多倍，故并联谐振又称为 
+<span class="spoiler" >电流谐振</span>
+
+<style>
+
+.spoiler { 
+  color: rgb(103, 104, 103);
+  background: rgb(103, 104, 103);
+}
+.spoiler:hover{
+    color: rgb(156, 233, 156);
+    background: rgb(39, 39, 39);
+}
+</style>。其中 I<sub>C</sub> 与 I<sub>L</sub> 数值相等，但方向相反，I<sub>C</sub> 与 I<sub>L</sub> 在 LC 支路构成的回路中流动，不会流过主干路.</p>
+</li>
+</ol>
+</div><div class="post-footer" id="post-footer">
+  <div class="post-info">
+    <div class="post-info-line">
+      <div class="post-info-mod">
+        <span title="更新于 2023-11-18 11:22:25">更新于 2023-11-18&nbsp;</span>
+      </div></div>
+    <div class="post-info-line">
+      <div class="post-info-md"></div>
+      <div class="post-info-share">
+        <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://yhj123.github.io/posts/%E7%94%B5%E8%B7%AF/%E6%A8%A1%E6%8B%9F%E7%94%B5%E8%B7%AF/%E8%B0%90%E6%8C%AF%E7%94%B5%E8%B7%AF/" data-title="谐振电路" data-hashtags="draft"><i class="fa-brands fa-twitter fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://yhj123.github.io/posts/%E7%94%B5%E8%B7%AF/%E6%A8%A1%E6%8B%9F%E7%94%B5%E8%B7%AF/%E8%B0%90%E6%8C%AF%E7%94%B5%E8%B7%AF/" data-hashtag="draft"><i class="fa-brands fa-facebook-square fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://yhj123.github.io/posts/%E7%94%B5%E8%B7%AF/%E6%A8%A1%E6%8B%9F%E7%94%B5%E8%B7%AF/%E8%B0%90%E6%8C%AF%E7%94%B5%E8%B7%AF/" data-title="谐振电路"><i class="fa-brands fa-weibo fa-fw" aria-hidden="true"></i></a>
+  </span>
+      </div>
+    </div>
+  </div>
+
+  <div class="post-info-more">
+    <section class="post-tags"><i class="fa-solid fa-tags fa-fw me-1" aria-hidden="true"></i><a href='/tags/draft/' class="post-tag">draft</a></section>
+    <section>
+      <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+    </section>
+  </div>
+
+  <div class="post-nav"><a href="/posts/%E7%94%B5%E8%B7%AF/%E6%A8%A1%E6%8B%9F%E7%94%B5%E8%B7%AF/%E6%95%B4%E6%B5%81%E7%94%B5%E8%B7%AF/" class="post-nav-item" rel="prev" title="整流电路"><i class="fa-solid fa-angle-left fa-fw" aria-hidden="true"></i>整流电路</a>
+      <a href="/posts/scientificamerican/%E5%A4%AA%E7%A9%BA%E6%B0%94%E5%80%99%E5%BB%BA%E6%A8%A1/" class="post-nav-item" rel="next" title="太空气候建模">太空气候建模<i class="fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+</article></main><footer class="footer">
+    <div class="footer-container"><div class="footer-line powered">由 <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreferrer" title="Hugo 0.111.3">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/hugo-fixit/FixIt" target="_blank" rel="external" title="FixIt v0.2.18-lts.4"><img class="fixit-icon" src="/fixit.min.svg" alt="FixIt logo" />&nbsp;FixIt</a>
+        </div><div class="footer-line copyright" itemscope itemtype="http://schema.org/CreativeWork"><i class="fa-regular fa-copyright fa-fw" aria-hidden="true"></i>
+            <span itemprop="copyrightYear">2023</span><span class="author" itemprop="copyrightHolder">
+              <a href="/"></a></span></div><div class="footer-line statistics"></div></div>
+  </footer></div><div class="widgets"><div class="fixed-buttons animate__faster d-none"><div class="fixed-button back-to-top" role="button" aria-label="回到顶部"><i class="fa-solid fa-arrow-up fa-fw" aria-hidden="true"></i><span class="variant-numeric d-none">0%</span>
+        </div></div><div id="mask"></div><noscript>
+    <div class="noscript-warning">FixIt 主题在启用 JavaScript 的情况下效果最佳。</div>
+  </noscript>
+</div><link rel="stylesheet" href="/lib/lightgallery/css/lightgallery-bundle.min.css"><link rel="stylesheet" href="/lib/pace/themes/blue/pace-theme-minimal.css"><script src="/lib/lightgallery/lightgallery.min.js" defer></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0.12/dist/fancybox.css">
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0.12/dist/fancybox.umd.js"></script><script src="/lib/lightgallery/plugins/thumbnail/lg-thumbnail.min.js" defer></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0.12/dist/fancybox.css">
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0.12/dist/fancybox.umd.js"></script><script src="/lib/lightgallery/plugins/zoom/lg-zoom.min.js" defer></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0.12/dist/fancybox.css">
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0.12/dist/fancybox.umd.js"></script><script src="/lib/sharer/sharer.min.js" async defer></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0.12/dist/fancybox.css">
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0.12/dist/fancybox.umd.js"></script><script src="/lib/pace/pace.min.js" async defer></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0.12/dist/fancybox.css">
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0.12/dist/fancybox.umd.js"></script><script>window.config={"code":{"copyTitle":"复制到剪贴板","editLockTitle":"锁定可编辑代码块","editUnLockTitle":"解锁可编辑代码块","editable":true,"maxShownLines":10},"comment":{"enable":false},"lightgallery":true};</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0.12/dist/fancybox.css">
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0.12/dist/fancybox.umd.js"></script><script src="/js/theme.min.js" defer></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0.12/dist/fancybox.css">
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0.12/dist/fancybox.umd.js"></script></body>
+</html>

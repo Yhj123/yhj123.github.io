@@ -1,0 +1,55 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+  <channel>
+    <title>所有文章 - Wiki</title>
+    <link>https://yhj123.github.io/posts/</link>
+    <description>所有文章 | Wiki</description>
+    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Sat, 18 Nov 2023 11:36:41 &#43;0800</lastBuildDate><atom:link href="https://yhj123.github.io/posts/" rel="self" type="application/rss+xml" /><item>
+  <title>Test</title>
+  <link>https://yhj123.github.io/posts/java/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/test/</link>
+  <pubDate>Sat, 18 Nov 2023 11:36:41 &#43;0800</pubDate>
+  <author>作者</author>
+  <guid>https://yhj123.github.io/posts/java/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/test/</guid>
+  <description><![CDATA[链接设计模式 链接设计模式]]></description>
+</item>
+<item>
+  <title>ref关键字</title>
+  <link>https://yhj123.github.io/posts/csharp/ref%E5%85%B3%E9%94%AE%E5%AD%97/</link>
+  <pubDate>Sat, 18 Nov 2023 11:22:25 &#43;0800</pubDate>
+  <author>作者</author>
+  <guid>https://yhj123.github.io/posts/csharp/ref%E5%85%B3%E9%94%AE%E5%AD%97/</guid>
+  <description><![CDATA[链接 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 #include &lt;stdio.h&gt; #include &lt;winsock2.h&gt; #pragma comment(lib, &#34;ws2_32&#34;) void bigOrSmall() { int byte = 0x12345678; byte = htonl(byte); /* 1位十六进制数可以用4位二进制数来表示 16进制1位 = 2进制4位]]></description>
+</item>
+<item>
+  <title>滤波电路</title>
+  <link>https://yhj123.github.io/posts/%E7%94%B5%E8%B7%AF/%E6%A8%A1%E6%8B%9F%E7%94%B5%E8%B7%AF/%E6%BB%A4%E6%B3%A2%E7%94%B5%E8%B7%AF/</link>
+  <pubDate>Sat, 18 Nov 2023 11:22:25 &#43;0800</pubDate>
+  <author>作者</author>
+  <guid>https://yhj123.github.io/posts/%E7%94%B5%E8%B7%AF/%E6%A8%A1%E6%8B%9F%E7%94%B5%E8%B7%AF/%E6%BB%A4%E6%B3%A2%E7%94%B5%E8%B7%AF/</guid>
+  <description><![CDATA[滤波电路 概述 滤波电路的功能是从众多的信号中选出需要的信号或滤除不需要的信号. 根据电路工作时是否需要电源，滤波电路分为 无源滤波器和有源滤波器 ；]]></description>
+</item>
+<item>
+  <title>太空气候建模</title>
+  <link>https://yhj123.github.io/posts/scientificamerican/%E5%A4%AA%E7%A9%BA%E6%B0%94%E5%80%99%E5%BB%BA%E6%A8%A1/</link>
+  <pubDate>Sat, 18 Nov 2023 11:22:25 &#43;0800</pubDate>
+  <author>作者</author>
+  <guid>https://yhj123.github.io/posts/scientificamerican/%E5%A4%AA%E7%A9%BA%E6%B0%94%E5%80%99%E5%BB%BA%E6%A8%A1/</guid>
+  <description><![CDATA[太空气候建模 链接 科学60s]]></description>
+</item>
+<item>
+  <title>谐振电路</title>
+  <link>https://yhj123.github.io/posts/%E7%94%B5%E8%B7%AF/%E6%A8%A1%E6%8B%9F%E7%94%B5%E8%B7%AF/%E8%B0%90%E6%8C%AF%E7%94%B5%E8%B7%AF/</link>
+  <pubDate>Sat, 18 Nov 2023 11:22:25 &#43;0800</pubDate>
+  <author>作者</author>
+  <guid>https://yhj123.github.io/posts/%E7%94%B5%E8%B7%AF/%E6%A8%A1%E6%8B%9F%E7%94%B5%E8%B7%AF/%E8%B0%90%E6%8C%AF%E7%94%B5%E8%B7%AF/</guid>
+  <description><![CDATA[谐振电路 概述 谐振电路是一种由电感和电容构成的电路，故又称为LC谐振电路.谐振电路分为 串联谐振电路 和 并联谐振电路. 串联谐振电路 概述 电容和电感头]]></description>
+</item>
+<item>
+  <title>整流电路</title>
+  <link>https://yhj123.github.io/posts/%E7%94%B5%E8%B7%AF/%E6%A8%A1%E6%8B%9F%E7%94%B5%E8%B7%AF/%E6%95%B4%E6%B5%81%E7%94%B5%E8%B7%AF/</link>
+  <pubDate>Sat, 18 Nov 2023 11:22:25 &#43;0800</pubDate>
+  <author>作者</author>
+  <guid>https://yhj123.github.io/posts/%E7%94%B5%E8%B7%AF/%E6%A8%A1%E6%8B%9F%E7%94%B5%E8%B7%AF/%E6%95%B4%E6%B5%81%E7%94%B5%E8%B7%AF/</guid>
+  <description><![CDATA[整流电路 概述 整流电路的功能是将交流电转换成直流电.整流电路主要有 半波整流电路、全波整流电路、桥式整流电路和倍压整流电路 等]]></description>
+</item>
+</channel>
+</rss>
