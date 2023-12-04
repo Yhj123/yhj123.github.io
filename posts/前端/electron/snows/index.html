@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+  <head>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+    <meta name="robots" content="noodp" />
+    <title>Electron环境搭建 - Wiki</title><meta name="author" content="">
+<meta name="author-link" content="">
+<meta name="description" content="" /><meta name="keywords" content='前端' /><meta itemprop="name" content="Electron环境搭建">
+<meta itemprop="description" content=""><meta itemprop="datePublished" content="2023-12-01T15:53:55+08:00" />
+<meta itemprop="dateModified" content="2023-12-01T15:53:55+08:00" />
+<meta itemprop="wordCount" content="0">
+<meta itemprop="keywords" content="前端," /><meta property="og:title" content="Electron环境搭建" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://yhj123.github.io/posts/%E5%89%8D%E7%AB%AF/electron/snows/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-12-01T15:53:55+08:00" />
+<meta property="article:modified_time" content="2023-12-01T15:53:55+08:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Electron环境搭建"/>
+<meta name="twitter:description" content=""/>
+<meta name="application-name" content="FixIt">
+<meta name="apple-mobile-web-app-title" content="FixIt"><meta name="theme-color" data-light="#f8f8f8" data-dark="#252627" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="canonical" href="https://yhj123.github.io/posts/%E5%89%8D%E7%AB%AF/electron/snows/" /><link rel="prev" href="https://yhj123.github.io/posts/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/linux/linux%E5%91%BD%E4%BB%A4/nohup%E5%91%BD%E4%BB%A4/" /><link rel="next" href="https://yhj123.github.io/posts/%E5%B5%8C%E5%85%A5%E5%BC%8F/stm32/stm32%E5%B7%A5%E7%A8%8B%E7%BB%93%E6%9E%84%E4%BB%A5%E5%8F%8A%E5%BC%80%E5%8F%91%E6%B5%81%E7%A8%8B/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Electron环境搭建",
+    "inLanguage": "zh-CN",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https:\/\/yhj123.github.io\/posts\/%E5%89%8D%E7%AB%AF\/electron\/snows\/"
+    },"genre": "posts","keywords": "前端","wordcount":  0 ,
+    "url": "https:\/\/yhj123.github.io\/posts\/%E5%89%8D%E7%AB%AF\/electron\/snows\/","datePublished": "2023-12-01T15:53:55+08:00","dateModified": "2023-12-01T15:53:55+08:00","publisher": {
+      "@type": "Organization",
+      "name": ""},"description": ""
+  }
+  </script></head>
+  <body data-header-desktop="sticky" data-header-mobile="auto"><script>(window.localStorage?.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('dark' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'dark' === 'dark')) && document.body.setAttribute('data-theme', 'dark');</script><div class="wrapper" data-page-style="normal"><header class="desktop animate__faster" id="header-desktop">
+  <div class="header-wrapper">
+    <div class="header-title">
+      <a href="/" title="Wiki"><img loading="lazy" src="/fixit.min.svg" data-title="Wiki" data-alt="Wiki" class="logo" style="background: url(/svg/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const i of ['style', 'data-title','data-alt','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const i of ['style', 'data-title','data-alt','onerror','onload']){this.removeAttribute(i);}"/><span class="header-title-text">wiki</span></a><span class="header-subtitle"></span></div>
+    <nav>
+      <ul class="menu"><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/posts/"
+                
+                
+              >文章</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/categories/"
+                
+                
+              >分类</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/tags/"
+                
+                
+              >标签</a></li><li class="menu-item delimiter"></li><li class="menu-item search" id="search-desktop">
+            <input type="text" placeholder="搜索文章标题或内容……" id="search-input-desktop">
+            <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+              <i class="fa-solid fa-search fa-fw" aria-hidden="true"></i>
+            </a>
+            <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+              <i class="fa-solid fa-times-circle fa-fw" aria-hidden="true"></i>
+            </a>
+            <span class="search-button search-loading" id="search-loading-desktop">
+              <i class="fa-solid fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+            </span>
+          </li><li class="menu-item theme-switch" title="切换主题">
+          <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+        </li></ul>
+    </nav>
+  </div>
+</header><header class="mobile animate__faster" id="header-mobile">
+  <div class="header-container">
+    <div class="header-wrapper">
+      <div class="header-title">
+        <a href="/" title="Wiki"><img loading="lazy" src="/fixit.min.svg" data-title="/fixit.min.svg" data-alt="/fixit.min.svg" class="logo" style="background: url(/svg/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const i of ['style', 'data-title','data-alt','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const i of ['style', 'data-title','data-alt','onerror','onload']){this.removeAttribute(i);}"/><span class="header-title-text">wiki</span></a><span class="header-subtitle"></span></div>
+      <div class="menu-toggle" id="menu-toggle-mobile">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+    <nav>
+      <ul class="menu" id="menu-mobile"><li class="search-wrapper">
+            <div class="search mobile" id="search-mobile">
+              <input type="text" placeholder="搜索文章标题或内容……" id="search-input-mobile">
+              <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                <i class="fa-solid fa-search fa-fw" aria-hidden="true"></i>
+              </a>
+              <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                <i class="fa-solid fa-times-circle fa-fw" aria-hidden="true"></i>
+              </a>
+              <span class="search-button search-loading" id="search-loading-mobile">
+                <i class="fa-solid fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+              </span>
+            </div>
+            <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+              取消
+            </a>
+          </li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/posts/"
+                  
+                  
+                >文章</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/categories/"
+                  
+                  
+                >分类</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/tags/"
+                  
+                  
+                >标签</a></li><li class="menu-item menu-system">
+          <span class="menu-system-item theme-switch" title="切换主题"><i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i></span></li>
+      </ul>
+    </nav>
+  </div>
+</header><div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+  </div>
+  <div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+  </div><main class="container"><aside class="toc" id="toc-auto"></aside>
+
+  <aside class="aside-custom">
+    </aside>
+
+  <article class="page single">
+    <div class="header"><h1 class="single-title animate__animated animate__flipInX"><span title="转载" class="icon-repost"><i class="fa-solid fa-share fa-fw" aria-hidden="true"></i></span><span>Electron环境搭建</span>
+      </h1></div><div class="post-meta">
+      <div class="post-meta-line"><span class="post-author"><span class="author"><i class="fa-solid fa-user-circle" aria-hidden="true"></i>
+      Anonymous</span></span>
+          <span class="post-category">收录于 <a href="/categories/electron/"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> Electron</a></span></div>
+      <div class="post-meta-line"><span title="发布于 2023-12-01 15:53:55"><i class="fa-regular fa-calendar-alt fa-fw me-1" aria-hidden="true"></i><time datetime="2023-12-01">2023-12-01</time></span>&nbsp;<span title="更新于 2023-12-01 15:53:55"><i class="fa-regular fa-edit fa-fw me-1" aria-hidden="true"></i><time datetime="2023-12-01">2023-12-01</time></span>&nbsp;<span title="0 字"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>约 100 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>预计阅读 0 分钟</span>&nbsp;</div>
+    </div><div class="content" id="content"></div><div class="post-footer" id="post-footer">
+  <div class="post-info">
+    <div class="post-info-line">
+      <div class="post-info-mod">
+        <span title="更新于 2023-12-01 15:53:55">更新于 2023-12-01&nbsp;</span>
+      </div></div>
+    <div class="post-info-line">
+      <div class="post-info-md"><span><a href="https://github.com/Yhj123/wiki_blog/posts%5c%e5%89%8d%e7%ab%af%5cElectron%5cElectron%e7%8e%af%e5%a2%83%e6%90%ad%e5%bb%ba.md" title="编辑此页"target="_blank" rel="external nofollow noopener noreferrer" class="link-to-edit">编辑此页</a></span></div>
+      <div class="post-info-share">
+        <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://yhj123.github.io/posts/%E5%89%8D%E7%AB%AF/electron/snows/" data-title="Electron环境搭建" data-hashtags="前端"><i class="fa-brands fa-twitter fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://yhj123.github.io/posts/%E5%89%8D%E7%AB%AF/electron/snows/" data-hashtag="前端"><i class="fa-brands fa-facebook-square fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://yhj123.github.io/posts/%E5%89%8D%E7%AB%AF/electron/snows/" data-title="Electron环境搭建"><i class="fa-brands fa-weibo fa-fw" aria-hidden="true"></i></a>
+  </span>
+      </div>
+    </div>
+  </div>
+
+  <div class="post-info-more">
+    <section class="post-tags"><i class="fa-solid fa-tags fa-fw me-1" aria-hidden="true"></i><a href='/tags/%E5%89%8D%E7%AB%AF/' class="post-tag">前端</a></section>
+    <section>
+      <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+    </section>
+  </div>
+
+  <div class="post-nav"><a href="/posts/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/linux/linux%E5%91%BD%E4%BB%A4/nohup%E5%91%BD%E4%BB%A4/" class="post-nav-item" rel="prev" title="Nohup命令"><i class="fa-solid fa-angle-left fa-fw" aria-hidden="true"></i>Nohup命令</a>
+      <a href="/posts/%E5%B5%8C%E5%85%A5%E5%BC%8F/stm32/stm32%E5%B7%A5%E7%A8%8B%E7%BB%93%E6%9E%84%E4%BB%A5%E5%8F%8A%E5%BC%80%E5%8F%91%E6%B5%81%E7%A8%8B/" class="post-nav-item" rel="next" title="STM32工程结构以及开发流程">STM32工程结构以及开发流程<i class="fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+</article></main><footer class="footer">
+    <div class="footer-container"><div class="footer-line powered">由 <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreferrer" title="Hugo 0.111.3">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/hugo-fixit/FixIt" target="_blank" rel="external" title="FixIt v0.2.18-lts.4"><img class="fixit-icon" src="/fixit.min.svg" alt="FixIt logo" />&nbsp;FixIt</a>
+        </div><div class="footer-line copyright" itemscope itemtype="http://schema.org/CreativeWork"><i class="fa-regular fa-copyright fa-fw" aria-hidden="true"></i>
+            <span itemprop="copyrightYear">2023</span><span class="author" itemprop="copyrightHolder">
+              <a href="/"></a></span></div><div class="footer-line statistics"></div></div>
+  </footer></div><div class="widgets"><div class="fixed-buttons animate__faster d-none"><div class="fixed-button back-to-top" role="button" aria-label="回到顶部"><i class="fa-solid fa-arrow-up fa-fw" aria-hidden="true"></i><span class="variant-numeric d-none">0%</span>
+        </div></div><div id="mask"></div><noscript>
+    <div class="noscript-warning">FixIt 主题在启用 JavaScript 的情况下效果最佳。</div>
+  </noscript>
+</div><link rel="stylesheet" href="/lib/pace/themes/blue/pace-theme-minimal.css"><script src="/lib/autocomplete/autocomplete.min.js" defer></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0.12/dist/fancybox.css">
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0.12/dist/fancybox.umd.js"></script>
+
+
+<script src="https://unpkg.com/typeit@8.7.1/dist/index.umd.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    
+    const matchingSummary = document.querySelector(".ai-explanation-content").textContent;
+    new TypeIt("#ai-explanation", {
+        strings: matchingSummary,
+        speed: 50,
+        lifeLike: true,
+        waitUntilVisible: true,
+    }).go();
+});
+</script><script src="/lib/algoliasearch/algoliasearch-lite.umd.min.js" defer></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0.12/dist/fancybox.css">
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0.12/dist/fancybox.umd.js"></script>
+
+
+<script src="https://unpkg.com/typeit@8.7.1/dist/index.umd.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    
+    const matchingSummary = document.querySelector(".ai-explanation-content").textContent;
+    new TypeIt("#ai-explanation", {
+        strings: matchingSummary,
+        speed: 50,
+        lifeLike: true,
+        waitUntilVisible: true,
+    }).go();
+});
+</script><script src="/lib/sharer/sharer.min.js" async defer></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0.12/dist/fancybox.css">
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0.12/dist/fancybox.umd.js"></script>
+
+
+<script src="https://unpkg.com/typeit@8.7.1/dist/index.umd.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    
+    const matchingSummary = document.querySelector(".ai-explanation-content").textContent;
+    new TypeIt("#ai-explanation", {
+        strings: matchingSummary,
+        speed: 50,
+        lifeLike: true,
+        waitUntilVisible: true,
+    }).go();
+});
+</script><script src="/lib/pace/pace.min.js" async defer></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0.12/dist/fancybox.css">
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0.12/dist/fancybox.umd.js"></script>
+
+
+<script src="https://unpkg.com/typeit@8.7.1/dist/index.umd.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    
+    const matchingSummary = document.querySelector(".ai-explanation-content").textContent;
+    new TypeIt("#ai-explanation", {
+        strings: matchingSummary,
+        speed: 50,
+        lifeLike: true,
+        waitUntilVisible: true,
+    }).go();
+});
+</script><script>window.config={"code":{"copyTitle":"复制到剪贴板","editLockTitle":"锁定可编辑代码块","editUnLockTitle":"解锁可编辑代码块","editable":true,"maxShownLines":10},"comment":{"enable":false},"search":{"algoliaAppID":"BA11HJWN6Y","algoliaIndex":"yhjedward","algoliaSearchKey":"adfbb624ce386a7ae198d4ee999d8e63","highlightTag":"em","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":30,"type":"algolia"}};</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0.12/dist/fancybox.css">
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0.12/dist/fancybox.umd.js"></script>
+
+
+<script src="https://unpkg.com/typeit@8.7.1/dist/index.umd.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    
+    const matchingSummary = document.querySelector(".ai-explanation-content").textContent;
+    new TypeIt("#ai-explanation", {
+        strings: matchingSummary,
+        speed: 50,
+        lifeLike: true,
+        waitUntilVisible: true,
+    }).go();
+});
+</script><script src="/js/theme.min.js" defer></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0.12/dist/fancybox.css">
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0.12/dist/fancybox.umd.js"></script>
+
+
+<script src="https://unpkg.com/typeit@8.7.1/dist/index.umd.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    
+    const matchingSummary = document.querySelector(".ai-explanation-content").textContent;
+    new TypeIt("#ai-explanation", {
+        strings: matchingSummary,
+        speed: 50,
+        lifeLike: true,
+        waitUntilVisible: true,
+    }).go();
+});
+</script></body>
+</html>

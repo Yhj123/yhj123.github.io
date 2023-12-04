@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+  <head>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+    <meta name="robots" content="noodp" />
+    <title>Linux系统启动 - Wiki</title><meta name="author" content="">
+<meta name="author-link" content="">
+<meta name="description" content="" /><meta name="keywords" content='draft' /><meta itemprop="name" content="Linux系统启动">
+<meta itemprop="description" content=""><meta itemprop="datePublished" content="2023-11-21T16:50:35+08:00" />
+<meta itemprop="dateModified" content="2023-11-21T16:50:35+08:00" />
+<meta itemprop="wordCount" content="709">
+<meta itemprop="keywords" content="draft," /><meta property="og:title" content="Linux系统启动" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://yhj123.github.io/posts/linux/linux%E6%BA%90%E7%A0%81%E5%AD%A6%E4%B9%A0/linux%E7%B3%BB%E7%BB%9F%E5%90%AF%E5%8A%A8/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-11-21T16:50:35+08:00" />
+<meta property="article:modified_time" content="2023-11-21T16:50:35+08:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Linux系统启动"/>
+<meta name="twitter:description" content=""/>
+<meta name="application-name" content="FixIt">
+<meta name="apple-mobile-web-app-title" content="FixIt"><meta name="theme-color" data-light="#f8f8f8" data-dark="#252627" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="canonical" href="https://yhj123.github.io/posts/linux/linux%E6%BA%90%E7%A0%81%E5%AD%A6%E4%B9%A0/linux%E7%B3%BB%E7%BB%9F%E5%90%AF%E5%8A%A8/" /><link rel="prev" href="https://yhj123.github.io/posts/cplusplus/%E6%A8%A1%E7%89%88cplusplus/%E6%A8%A1%E7%89%88/" /><link rel="next" href="https://yhj123.github.io/posts/linux/linux%E5%91%BD%E4%BB%A4/cp%E5%91%BD%E4%BB%A4%E4%B8%8Escp%E5%91%BD%E4%BB%A4/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Linux系统启动",
+    "inLanguage": "zh-CN",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https:\/\/yhj123.github.io\/posts\/linux\/linux%E6%BA%90%E7%A0%81%E5%AD%A6%E4%B9%A0\/linux%E7%B3%BB%E7%BB%9F%E5%90%AF%E5%8A%A8\/"
+    },"genre": "posts","keywords": "draft","wordcount":  709 ,
+    "url": "https:\/\/yhj123.github.io\/posts\/linux\/linux%E6%BA%90%E7%A0%81%E5%AD%A6%E4%B9%A0\/linux%E7%B3%BB%E7%BB%9F%E5%90%AF%E5%8A%A8\/","datePublished": "2023-11-21T16:50:35+08:00","dateModified": "2023-11-21T16:50:35+08:00","publisher": {
+      "@type": "Organization",
+      "name": ""},"description": ""
+  }
+  </script></head>
+  <body data-header-desktop="sticky" data-header-mobile="auto"><script>(window.localStorage?.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('dark' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'dark' === 'dark')) && document.body.setAttribute('data-theme', 'dark');</script><div class="wrapper" data-page-style="normal"><header class="desktop animate__faster" id="header-desktop">
+  <div class="header-wrapper">
+    <div class="header-title">
+      <a href="/" title="Wiki"><img loading="lazy" src="/fixit.min.svg" data-title="Wiki" data-alt="Wiki" class="logo" style="background: url(/svg/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const i of ['style', 'data-title','data-alt','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const i of ['style', 'data-title','data-alt','onerror','onload']){this.removeAttribute(i);}"/><span class="header-title-text">wiki</span></a><span class="header-subtitle"></span></div>
+    <nav>
+      <ul class="menu"><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/posts/"
+                
+                
+              >文章</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/categories/"
+                
+                
+              >分类</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/tags/"
+                
+                
+              >标签</a></li><li class="menu-item delimiter"></li><li class="menu-item search" id="search-desktop">
+            <input type="text" placeholder="搜索文章标题或内容……" id="search-input-desktop">
+            <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+              <i class="fa-solid fa-search fa-fw" aria-hidden="true"></i>
+            </a>
+            <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+              <i class="fa-solid fa-times-circle fa-fw" aria-hidden="true"></i>
+            </a>
+            <span class="search-button search-loading" id="search-loading-desktop">
+              <i class="fa-solid fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+            </span>
+          </li><li class="menu-item theme-switch" title="切换主题">
+          <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+        </li></ul>
+    </nav>
+  </div>
+</header><header class="mobile animate__faster" id="header-mobile">
+  <div class="header-container">
+    <div class="header-wrapper">
+      <div class="header-title">
+        <a href="/" title="Wiki"><img loading="lazy" src="/fixit.min.svg" data-title="/fixit.min.svg" data-alt="/fixit.min.svg" class="logo" style="background: url(/svg/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const i of ['style', 'data-title','data-alt','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const i of ['style', 'data-title','data-alt','onerror','onload']){this.removeAttribute(i);}"/><span class="header-title-text">wiki</span></a><span class="header-subtitle"></span></div>
+      <div class="menu-toggle" id="menu-toggle-mobile">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+    <nav>
+      <ul class="menu" id="menu-mobile"><li class="search-wrapper">
+            <div class="search mobile" id="search-mobile">
+              <input type="text" placeholder="搜索文章标题或内容……" id="search-input-mobile">
+              <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                <i class="fa-solid fa-search fa-fw" aria-hidden="true"></i>
+              </a>
+              <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                <i class="fa-solid fa-times-circle fa-fw" aria-hidden="true"></i>
+              </a>
+              <span class="search-button search-loading" id="search-loading-mobile">
+                <i class="fa-solid fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+              </span>
+            </div>
+            <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+              取消
+            </a>
+          </li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/posts/"
+                  
+                  
+                >文章</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/categories/"
+                  
+                  
+                >分类</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/tags/"
+                  
+                  
+                >标签</a></li><li class="menu-item menu-system">
+          <span class="menu-system-item theme-switch" title="切换主题"><i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i></span></li>
+      </ul>
+    </nav>
+  </div>
+</header><div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+  </div>
+  <div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+  </div><main class="container"><aside class="toc" id="toc-auto"><h2 class="toc-title">目录&nbsp;<i class="toc-icon fa-solid fa-angle-down fa-fw" aria-hidden="true"></i></h2>
+      <div class="toc-content" id="toc-content-auto"></div></aside>
+
+  <aside class="aside-custom">
+    </aside>
+
+  <article class="page single">
+    <div class="header"><h1 class="single-title animate__animated animate__flipInX"><span title="转载" class="icon-repost"><i class="fa-solid fa-share fa-fw" aria-hidden="true"></i></span><span>Linux系统启动</span>
+      </h1></div><div class="post-meta">
+      <div class="post-meta-line"><span class="post-author"><span class="author"><i class="fa-solid fa-user-circle" aria-hidden="true"></i>
+      Anonymous</span></span>
+          <span class="post-category">收录于 <a href="/categories/linux%E6%BA%90%E7%A0%81%E5%AD%A6%E4%B9%A0/"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> linux源码学习</a></span></div>
+      <div class="post-meta-line"><span title="发布于 2023-11-21 16:50:35"><i class="fa-regular fa-calendar-alt fa-fw me-1" aria-hidden="true"></i><time datetime="2023-11-21">2023-11-21</time></span>&nbsp;<span title="更新于 2023-11-21 16:50:35"><i class="fa-regular fa-edit fa-fw me-1" aria-hidden="true"></i><time datetime="2023-11-21">2023-11-21</time></span>&nbsp;<span title="709 字"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>约 800 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>预计阅读 2 分钟</span>&nbsp;</div>
+    </div><div class="details toc" id="toc-static" data-kept="false">
+        <div class="details-summary toc-title">
+          <span>目录</span>
+          <span><i class="details-icon fa-solid fa-angle-right" aria-hidden="true"></i></span>
+        </div>
+        <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#第一行代码-加载启动区">第一行代码: 加载启动区</a></li>
+    <li><a href="#参考链接">参考链接</a></li>
+  </ul>
+</nav></div>
+      </div><div class="content" id="content"><h2 id="第一行代码-加载启动区">第一行代码: 加载启动区</h2>
+<ol>
+<li>操作系统的开发人员,会把操作系统最开始的那段代码<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>，编译并存储在硬盘的 0 盘 0 道 1 扇区.按下开机键的那一刻，CPU会自动把代码段寄存器 CS 设置为 0xF000, 其段基地址则被设置为 0xFFFF0000, 段长度设置为 64KB。而 IP 被设置为0xFFF0,因此此时CPU代码指针指向 0xFFFFFFF0 处,即4G空间最后一个64K的最后16字节处,即系统 ROM BIOS 存放的位置.在主板上提前写死的固件程序 BIOS 会将硬盘中启动区<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>的 512 字节的数据，原封不动复制到内存中的 0x7c00 这个位置，并跳转到那个位置进行执行.</li>
+</ol>
+<div class="highlight" id="id-1"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">mov ax,0x07c0         !将值 0x07c0 复制到 ax 寄存器里
+</span></span><span class="line"><span class="cl">mov ds,ax             !将 ax 寄存器里的值复制到 ds 寄存器
+</span></span><span class="line"><span class="cl">mov ax,0x9000
+</span></span><span class="line"><span class="cl">mov es,ax
+</span></span><span class="line"><span class="cl">mov cx,#256           ！计数器，提供需要复制的字的数量 256字=512字节
+</span></span><span class="line"><span class="cl">sub si,si             !sub指令作用：减法操作,即 si 寄存器清零.
+</span></span><span class="line"><span class="cl">sub di,di
+</span></span><span class="line"><span class="cl">rep                   !rep指令作用：重复执行后面一句操作，并递减cx的值，直到cx=0停止.
+</span></span><span class="line"><span class="cl">movw                  !movw指令作用：这里从内存 [si] 处移动 cx 个字到 [di]；注意一次的移动单位是“字”，mov指令+w（word）是一次移动一个字.
+</span></span><span class="line"><span class="cl">jmpi    go,INITSEG    !将BIOS移动到0x9000后，跳转（go）到INITSEG（0x9000），CS=0x90000
+</span></span><span class="line"><span class="cl">go:	mov	ax,cs
+</span></span><span class="line"><span class="cl">	mov	ds,ax
+</span></span><span class="line"><span class="cl">	mov	es,ax</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="details admonition abstract">
+    <div class="details-summary admonition-title">
+      <i class="icon fa-solid fa-list-ul fa-fw" aria-hidden="true"></i>解释<i class="details-icon fa-solid fa-angle-right fa-fw" aria-hidden="true"></i>
+    </div>
+    <div class="details-content">
+      <div class="admonition-content"><ol>
+<li>一段 512 字节的代码和数据，从硬盘的启动区先是被移动到了内存 0x7c00 处，然后又立刻被移动到 0x90000 处，并且跳转到此处往后再稍稍偏移 go 这个标签所代表的偏移地址处，即 mov ax,cs 这行指令的位置.</li>
+</ol>
+</div>
+    </div>
+  </div>
+<iframe src="//player.bilibili.com/player.html?aid=332785594&bvid=BV1iA411V7Di&cid=331932253&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+<h2 id="参考链接">参考链接</h2>
+<ol>
+<li><a href="https://www.jianshu.com/p/5454069688a2"target="_blank" rel="external nofollow noopener noreferrer">Linux内核源码学习——bootsect.s</a></li>
+<li><a href="https://github.com/dibingfa/flash-linux0.11-talk"target="_blank" rel="external nofollow noopener noreferrer">Linux 源码趣读</a></li>
+<li><a href="https://elixir.bootlin.com/linux/0.11/source"target="_blank" rel="external nofollow noopener noreferrer">linux在线源码</a></li>
+</ol>
+<div class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1">
+<p>开始的代码是用汇编语言写的 bootsect.s(位于boot 文件夹下).&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:2">
+<p>启动区: 硬盘中的 0 盘 0 道 1 扇区的 512 个字节的最后两个字节(0x55 和 0xaa).&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</div></div><div class="post-footer" id="post-footer">
+  <div class="post-info">
+    <div class="post-info-line">
+      <div class="post-info-mod">
+        <span title="更新于 2023-11-21 16:50:35">更新于 2023-11-21&nbsp;</span>
+      </div></div>
+    <div class="post-info-line">
+      <div class="post-info-md"><span><a href="https://github.com/Yhj123/wiki_blog/posts%5clinux%5clinux%e6%ba%90%e7%a0%81%e5%ad%a6%e4%b9%a0%5clinux%e7%b3%bb%e7%bb%9f%e5%90%af%e5%8a%a8.md" title="编辑此页"target="_blank" rel="external nofollow noopener noreferrer" class="link-to-edit">编辑此页</a></span></div>
+      <div class="post-info-share">
+        <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://yhj123.github.io/posts/linux/linux%E6%BA%90%E7%A0%81%E5%AD%A6%E4%B9%A0/linux%E7%B3%BB%E7%BB%9F%E5%90%AF%E5%8A%A8/" data-title="Linux系统启动" data-hashtags="draft"><i class="fa-brands fa-twitter fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://yhj123.github.io/posts/linux/linux%E6%BA%90%E7%A0%81%E5%AD%A6%E4%B9%A0/linux%E7%B3%BB%E7%BB%9F%E5%90%AF%E5%8A%A8/" data-hashtag="draft"><i class="fa-brands fa-facebook-square fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://yhj123.github.io/posts/linux/linux%E6%BA%90%E7%A0%81%E5%AD%A6%E4%B9%A0/linux%E7%B3%BB%E7%BB%9F%E5%90%AF%E5%8A%A8/" data-title="Linux系统启动"><i class="fa-brands fa-weibo fa-fw" aria-hidden="true"></i></a>
+  </span>
+      </div>
+    </div>
+  </div>
+
+  <div class="post-info-more">
+    <section class="post-tags"><i class="fa-solid fa-tags fa-fw me-1" aria-hidden="true"></i><a href='/tags/draft/' class="post-tag">draft</a></section>
+    <section>
+      <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+    </section>
+  </div>
+
+  <div class="post-nav"><a href="/posts/cplusplus/%E6%A8%A1%E7%89%88cplusplus/%E6%A8%A1%E7%89%88/" class="post-nav-item" rel="prev" title="模版"><i class="fa-solid fa-angle-left fa-fw" aria-hidden="true"></i>模版</a>
+      <a href="/posts/linux/linux%E5%91%BD%E4%BB%A4/cp%E5%91%BD%E4%BB%A4%E4%B8%8Escp%E5%91%BD%E4%BB%A4/" class="post-nav-item" rel="next" title="CP命令与SCP命令">CP命令与SCP命令<i class="fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+</article></main><footer class="footer">
+    <div class="footer-container"><div class="footer-line powered">由 <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreferrer" title="Hugo 0.111.3">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/hugo-fixit/FixIt" target="_blank" rel="external" title="FixIt v0.2.18-lts.4"><img class="fixit-icon" src="/fixit.min.svg" alt="FixIt logo" />&nbsp;FixIt</a>
+        </div><div class="footer-line copyright" itemscope itemtype="http://schema.org/CreativeWork"><i class="fa-regular fa-copyright fa-fw" aria-hidden="true"></i>
+            <span itemprop="copyrightYear">2023</span><span class="author" itemprop="copyrightHolder">
+              <a href="/"></a></span></div><div class="footer-line statistics"></div></div>
+  </footer></div><div class="widgets"><div class="fixed-buttons animate__faster d-none"><div class="fixed-button back-to-top" role="button" aria-label="回到顶部"><i class="fa-solid fa-arrow-up fa-fw" aria-hidden="true"></i><span class="variant-numeric d-none">0%</span>
+        </div></div><div id="mask"></div><noscript>
+    <div class="noscript-warning">FixIt 主题在启用 JavaScript 的情况下效果最佳。</div>
+  </noscript>
+</div><link rel="stylesheet" href="/lib/pace/themes/blue/pace-theme-minimal.css"><script src="/lib/autocomplete/autocomplete.min.js" defer></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0.12/dist/fancybox.css">
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0.12/dist/fancybox.umd.js"></script><script src="/lib/algoliasearch/algoliasearch-lite.umd.min.js" defer></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0.12/dist/fancybox.css">
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0.12/dist/fancybox.umd.js"></script><script src="/lib/sharer/sharer.min.js" async defer></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0.12/dist/fancybox.css">
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0.12/dist/fancybox.umd.js"></script><script src="/lib/pace/pace.min.js" async defer></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0.12/dist/fancybox.css">
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0.12/dist/fancybox.umd.js"></script><script>window.config={"code":{"copyTitle":"复制到剪贴板","editLockTitle":"锁定可编辑代码块","editUnLockTitle":"解锁可编辑代码块","editable":true,"maxShownLines":10},"comment":{"enable":false},"search":{"algoliaAppID":"BA11HJWN6Y","algoliaIndex":"yhjedward","algoliaSearchKey":"adfbb624ce386a7ae198d4ee999d8e63","highlightTag":"em","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":30,"type":"algolia"}};</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0.12/dist/fancybox.css">
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0.12/dist/fancybox.umd.js"></script><script src="/js/theme.min.js" defer></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0.12/dist/fancybox.css">
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0.12/dist/fancybox.umd.js"></script></body>
+</html>

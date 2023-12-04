@@ -1,0 +1,15 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+  <channel>
+    <title>CSharp - 分类 - Wiki</title>
+    <link>https://yhj123.github.io/categories/csharp/</link>
+    <description>CSharp - 分类 - Wiki</description>
+    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Sat, 18 Nov 2023 11:22:25 &#43;0800</lastBuildDate><atom:link href="https://yhj123.github.io/categories/csharp/" rel="self" type="application/rss+xml" /><item>
+  <title>ref关键字</title>
+  <link>https://yhj123.github.io/posts/%E5%90%8E%E7%AB%AF/csharp/ref%E5%85%B3%E9%94%AE%E5%AD%97/</link>
+  <pubDate>Sat, 18 Nov 2023 11:22:25 &#43;0800</pubDate>
+  <author>作者</author>
+  <guid>https://yhj123.github.io/posts/%E5%90%8E%E7%AB%AF/csharp/ref%E5%85%B3%E9%94%AE%E5%AD%97/</guid>
+  <description><![CDATA[链接 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 #include &lt;stdio.h&gt; #include &lt;winsock2.h&gt; #pragma comment(lib, &#34;ws2_32&#34;) void bigOrSmall() { int byte = 0x12345678; byte = htonl(byte); /* 1位十六进制数可以用4位二进制数来表示 16进制1位 = 2进制4位]]></description>
+</item>
+</channel>
+</rss>

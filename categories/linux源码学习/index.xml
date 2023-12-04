@@ -1,0 +1,15 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+  <channel>
+    <title>linux源码学习 - 分类 - Wiki</title>
+    <link>https://yhj123.github.io/categories/linux%E6%BA%90%E7%A0%81%E5%AD%A6%E4%B9%A0/</link>
+    <description>linux源码学习 - 分类 - Wiki</description>
+    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Tue, 21 Nov 2023 16:50:35 &#43;0800</lastBuildDate><atom:link href="https://yhj123.github.io/categories/linux%E6%BA%90%E7%A0%81%E5%AD%A6%E4%B9%A0/" rel="self" type="application/rss+xml" /><item>
+  <title>Linux系统启动</title>
+  <link>https://yhj123.github.io/posts/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/linux/linux%E6%BA%90%E7%A0%81%E5%AD%A6%E4%B9%A0/linux%E7%B3%BB%E7%BB%9F%E5%90%AF%E5%8A%A8/</link>
+  <pubDate>Tue, 21 Nov 2023 16:50:35 &#43;0800</pubDate>
+  <author>作者</author>
+  <guid>https://yhj123.github.io/posts/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/linux/linux%E6%BA%90%E7%A0%81%E5%AD%A6%E4%B9%A0/linux%E7%B3%BB%E7%BB%9F%E5%90%AF%E5%8A%A8/</guid>
+  <description><![CDATA[]]></description>
+</item>
+</channel>
+</rss>

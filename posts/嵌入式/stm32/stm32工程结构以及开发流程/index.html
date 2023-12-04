@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+  <head>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+    <meta name="robots" content="noodp" />
+    <title>STM32工程结构以及开发流程 - Wiki</title><meta name="author" content="">
+<meta name="author-link" content="">
+<meta name="description" content="" /><meta name="keywords" content='STM32' /><meta itemprop="name" content="STM32工程结构以及开发流程">
+<meta itemprop="description" content=""><meta itemprop="datePublished" content="2023-12-04T15:43:23+08:00" />
+<meta itemprop="dateModified" content="2023-12-04T15:43:23+08:00" />
+<meta itemprop="wordCount" content="1374">
+<meta itemprop="keywords" content="STM32," /><meta property="og:title" content="STM32工程结构以及开发流程" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://yhj123.github.io/posts/%E5%B5%8C%E5%85%A5%E5%BC%8F/stm32/stm32%E5%B7%A5%E7%A8%8B%E7%BB%93%E6%9E%84%E4%BB%A5%E5%8F%8A%E5%BC%80%E5%8F%91%E6%B5%81%E7%A8%8B/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-12-04T15:43:23+08:00" />
+<meta property="article:modified_time" content="2023-12-04T15:43:23+08:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="STM32工程结构以及开发流程"/>
+<meta name="twitter:description" content=""/>
+<meta name="application-name" content="FixIt">
+<meta name="apple-mobile-web-app-title" content="FixIt"><meta name="theme-color" data-light="#f8f8f8" data-dark="#252627" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="canonical" href="https://yhj123.github.io/posts/%E5%B5%8C%E5%85%A5%E5%BC%8F/stm32/stm32%E5%B7%A5%E7%A8%8B%E7%BB%93%E6%9E%84%E4%BB%A5%E5%8F%8A%E5%BC%80%E5%8F%91%E6%B5%81%E7%A8%8B/" /><link rel="prev" href="https://yhj123.github.io/posts/%E5%89%8D%E7%AB%AF/electron/snows/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "STM32工程结构以及开发流程",
+    "inLanguage": "zh-CN",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https:\/\/yhj123.github.io\/posts\/%E5%B5%8C%E5%85%A5%E5%BC%8F\/stm32\/stm32%E5%B7%A5%E7%A8%8B%E7%BB%93%E6%9E%84%E4%BB%A5%E5%8F%8A%E5%BC%80%E5%8F%91%E6%B5%81%E7%A8%8B\/"
+    },"genre": "posts","keywords": "STM32","wordcount":  1374 ,
+    "url": "https:\/\/yhj123.github.io\/posts\/%E5%B5%8C%E5%85%A5%E5%BC%8F\/stm32\/stm32%E5%B7%A5%E7%A8%8B%E7%BB%93%E6%9E%84%E4%BB%A5%E5%8F%8A%E5%BC%80%E5%8F%91%E6%B5%81%E7%A8%8B\/","datePublished": "2023-12-04T15:43:23+08:00","dateModified": "2023-12-04T15:43:23+08:00","publisher": {
+      "@type": "Organization",
+      "name": ""},"description": ""
+  }
+  </script></head>
+  <body data-header-desktop="sticky" data-header-mobile="auto"><script>(window.localStorage?.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('dark' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'dark' === 'dark')) && document.body.setAttribute('data-theme', 'dark');</script><div class="wrapper" data-page-style="normal"><header class="desktop animate__faster" id="header-desktop">
+  <div class="header-wrapper">
+    <div class="header-title">
+      <a href="/" title="Wiki"><img loading="lazy" src="/fixit.min.svg" data-title="Wiki" data-alt="Wiki" class="logo" style="background: url(/svg/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const i of ['style', 'data-title','data-alt','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const i of ['style', 'data-title','data-alt','onerror','onload']){this.removeAttribute(i);}"/><span class="header-title-text">wiki</span></a><span class="header-subtitle"></span></div>
+    <nav>
+      <ul class="menu"><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/posts/"
+                
+                
+              >文章</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/categories/"
+                
+                
+              >分类</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/tags/"
+                
+                
+              >标签</a></li><li class="menu-item delimiter"></li><li class="menu-item search" id="search-desktop">
+            <input type="text" placeholder="搜索文章标题或内容……" id="search-input-desktop">
+            <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+              <i class="fa-solid fa-search fa-fw" aria-hidden="true"></i>
+            </a>
+            <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+              <i class="fa-solid fa-times-circle fa-fw" aria-hidden="true"></i>
+            </a>
+            <span class="search-button search-loading" id="search-loading-desktop">
+              <i class="fa-solid fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+            </span>
+          </li><li class="menu-item theme-switch" title="切换主题">
+          <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+        </li></ul>
+    </nav>
+  </div>
+</header><header class="mobile animate__faster" id="header-mobile">
+  <div class="header-container">
+    <div class="header-wrapper">
+      <div class="header-title">
+        <a href="/" title="Wiki"><img loading="lazy" src="/fixit.min.svg" data-title="/fixit.min.svg" data-alt="/fixit.min.svg" class="logo" style="background: url(/svg/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const i of ['style', 'data-title','data-alt','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const i of ['style', 'data-title','data-alt','onerror','onload']){this.removeAttribute(i);}"/><span class="header-title-text">wiki</span></a><span class="header-subtitle"></span></div>
+      <div class="menu-toggle" id="menu-toggle-mobile">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+    <nav>
+      <ul class="menu" id="menu-mobile"><li class="search-wrapper">
+            <div class="search mobile" id="search-mobile">
+              <input type="text" placeholder="搜索文章标题或内容……" id="search-input-mobile">
+              <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                <i class="fa-solid fa-search fa-fw" aria-hidden="true"></i>
+              </a>
+              <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                <i class="fa-solid fa-times-circle fa-fw" aria-hidden="true"></i>
+              </a>
+              <span class="search-button search-loading" id="search-loading-mobile">
+                <i class="fa-solid fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+              </span>
+            </div>
+            <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+              取消
+            </a>
+          </li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/posts/"
+                  
+                  
+                >文章</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/categories/"
+                  
+                  
+                >分类</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/tags/"
+                  
+                  
+                >标签</a></li><li class="menu-item menu-system">
+          <span class="menu-system-item theme-switch" title="切换主题"><i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i></span></li>
+      </ul>
+    </nav>
+  </div>
+</header><div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+  </div>
+  <div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+  </div><main class="container"><aside class="toc" id="toc-auto"><h2 class="toc-title">目录&nbsp;<i class="toc-icon fa-solid fa-angle-down fa-fw" aria-hidden="true"></i></h2>
+      <div class="toc-content" id="toc-content-auto"></div></aside>
+
+  <aside class="aside-custom">
+    </aside>
+
+  <article class="page single">
+    <div class="header"><h1 class="single-title animate__animated animate__flipInX"><span title="转载" class="icon-repost"><i class="fa-solid fa-share fa-fw" aria-hidden="true"></i></span><span>STM32工程结构以及开发流程</span>
+      </h1></div><div class="post-meta">
+      <div class="post-meta-line"><span class="post-author"><span class="author"><i class="fa-solid fa-user-circle" aria-hidden="true"></i>
+      Anonymous</span></span>
+          <span class="post-category">收录于 <a href="/categories/%E5%B5%8C%E5%85%A5%E5%BC%8F/"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> 嵌入式</a></span></div>
+      <div class="post-meta-line"><span title="发布于 2023-12-04 15:43:23"><i class="fa-regular fa-calendar-alt fa-fw me-1" aria-hidden="true"></i><time datetime="2023-12-04">2023-12-04</time></span>&nbsp;<span title="更新于 2023-12-04 15:43:23"><i class="fa-regular fa-edit fa-fw me-1" aria-hidden="true"></i><time datetime="2023-12-04">2023-12-04</time></span>&nbsp;<span title="1374 字"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>约 1400 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>预计阅读 3 分钟</span>&nbsp;</div>
+    </div><div class="details toc" id="toc-static" data-kept="false">
+        <div class="details-summary toc-title">
+          <span>目录</span>
+          <span><i class="details-icon fa-solid fa-angle-right" aria-hidden="true"></i></span>
+        </div>
+        <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#文件结构">文件结构</a>
+      <ul>
+        <li><a href="#stm32f10x_stdperiph_lib_v360-文件树">STM32F10x_StdPeriph_Lib_V3.6.0 文件树</a></li>
+        <li><a href="#startup_stm32xxxxxs-文件">startup_stm32xxxxx.s 文件</a></li>
+        <li><a href="#stm32f4xxh-文件">stm32f4xx.h 文件</a></li>
+        <li><a href="#mainc-文件">main.c 文件</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+      </div><div class="content" id="content"><h2 id="文件结构">文件结构</h2>
+<h3 id="stm32f10x_stdperiph_lib_v360-文件树">STM32F10x_StdPeriph_Lib_V3.6.0 文件树</h3>
+<div class="highlight" id="id-1"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-txt" data-lang="txt"><span class="line"><span class="cl">STM32F10x_StdPeriph_Lib_V3.6
+</span></span><span class="line"><span class="cl"> ├── Libraries                        // 驱动库的源代码与启动文件
+</span></span><span class="line"><span class="cl"> ├── Project                          // 驱动库写的例子和一个工程模版
+</span></span><span class="line"><span class="cl"> ├── stm32f10x_stdperiph_lib_um.chm   // 固件库使用手册和应用举例
+</span></span><span class="line"><span class="cl"> └── Utilities                        // ST 公司评估板的相关例程代码</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="libraries-文件夹">Libraries 文件夹</h4>
+<div class="highlight" id="id-2"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">  1
+</span><span class="lnt">  2
+</span><span class="lnt">  3
+</span><span class="lnt">  4
+</span><span class="lnt">  5
+</span><span class="lnt">  6
+</span><span class="lnt">  7
+</span><span class="lnt">  8
+</span><span class="lnt">  9
+</span><span class="lnt"> 10
+</span><span class="lnt"> 11
+</span><span class="lnt"> 12
+</span><span class="lnt"> 13
+</span><span class="lnt"> 14
+</span><span class="lnt"> 15
+</span><span class="lnt"> 16
+</span><span class="lnt"> 17
+</span><span class="lnt"> 18
+</span><span class="lnt"> 19
+</span><span class="lnt"> 20
+</span><span class="lnt"> 21
+</span><span class="lnt"> 22
+</span><span class="lnt"> 23
+</span><span class="lnt"> 24
+</span><span class="lnt"> 25
+</span><span class="lnt"> 26
+</span><span class="lnt"> 27
+</span><span class="lnt"> 28
+</span><span class="lnt"> 29
+</span><span class="lnt"> 30
+</span><span class="lnt"> 31
+</span><span class="lnt"> 32
+</span><span class="lnt"> 33
+</span><span class="lnt"> 34
+</span><span class="lnt"> 35
+</span><span class="lnt"> 36
+</span><span class="lnt"> 37
+</span><span class="lnt"> 38
+</span><span class="lnt"> 39
+</span><span class="lnt"> 40
+</span><span class="lnt"> 41
+</span><span class="lnt"> 42
+</span><span class="lnt"> 43
+</span><span class="lnt"> 44
+</span><span class="lnt"> 45
+</span><span class="lnt"> 46
+</span><span class="lnt"> 47
+</span><span class="lnt"> 48
+</span><span class="lnt"> 49
+</span><span class="lnt"> 50
+</span><span class="lnt"> 51
+</span><span class="lnt"> 52
+</span><span class="lnt"> 53
+</span><span class="lnt"> 54
+</span><span class="lnt"> 55
+</span><span class="lnt"> 56
+</span><span class="lnt"> 57
+</span><span class="lnt"> 58
+</span><span class="lnt"> 59
+</span><span class="lnt"> 60
+</span><span class="lnt"> 61
+</span><span class="lnt"> 62
+</span><span class="lnt"> 63
+</span><span class="lnt"> 64
+</span><span class="lnt"> 65
+</span><span class="lnt"> 66
+</span><span class="lnt"> 67
+</span><span class="lnt"> 68
+</span><span class="lnt"> 69
+</span><span class="lnt"> 70
+</span><span class="lnt"> 71
+</span><span class="lnt"> 72
+</span><span class="lnt"> 73
+</span><span class="lnt"> 74
+</span><span class="lnt"> 75
+</span><span class="lnt"> 76
+</span><span class="lnt"> 77
+</span><span class="lnt"> 78
+</span><span class="lnt"> 79
+</span><span class="lnt"> 80
+</span><span class="lnt"> 81
+</span><span class="lnt"> 82
+</span><span class="lnt"> 83
+</span><span class="lnt"> 84
+</span><span class="lnt"> 85
+</span><span class="lnt"> 86
+</span><span class="lnt"> 87
+</span><span class="lnt"> 88
+</span><span class="lnt"> 89
+</span><span class="lnt"> 90
+</span><span class="lnt"> 91
+</span><span class="lnt"> 92
+</span><span class="lnt"> 93
+</span><span class="lnt"> 94
+</span><span class="lnt"> 95
+</span><span class="lnt"> 96
+</span><span class="lnt"> 97
+</span><span class="lnt"> 98
+</span><span class="lnt"> 99
+</span><span class="lnt">100
+</span><span class="lnt">101
+</span><span class="lnt">102
+</span><span class="lnt">103
+</span><span class="lnt">104
+</span><span class="lnt">105
+</span><span class="lnt">106
+</span><span class="lnt">107
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-txt" data-lang="txt"><span class="line"><span class="cl">Libraries
+</span></span><span class="line"><span class="cl"> ├── CMSIS                          // Cortex-M3 内核自带的外设驱动代码和启动代码
+</span></span><span class="line"><span class="cl"> │   ├── CM3
+</span></span><span class="line"><span class="cl"> │   │   ├── CoreSupport            // Cortex-M3 内核自带的外设驱动代码
+</span></span><span class="line"><span class="cl"> │   │   │   ├── core_cm3.c
+</span></span><span class="line"><span class="cl"> │   │   │   └── core_cm3.h
+</span></span><span class="line"><span class="cl"> │   │   └── DeviceSupport
+</span></span><span class="line"><span class="cl"> │   │       └── ST
+</span></span><span class="line"><span class="cl"> │   │           └── STM32F10x
+</span></span><span class="line"><span class="cl"> │   │               ├── LICENSE.txt
+</span></span><span class="line"><span class="cl"> │   │               ├── Release_Notes.html
+</span></span><span class="line"><span class="cl"> │   │               ├── startup    // 包含 arm 等四个对应不同开发环境的启动代码文件夹
+</span></span><span class="line"><span class="cl"> │   │               │   ├── arm    // 对应 Keil 开发环境下不同容量(小(LD),中(MD),大(HD)容量Flash)芯片的启动代码.
+</span></span><span class="line"><span class="cl"> │   │               │   │   ├── startup_stm32f10x_cl.s
+</span></span><span class="line"><span class="cl"> │   │               │   │   ├── startup_stm32f10x_hd.s
+</span></span><span class="line"><span class="cl"> │   │               │   │   ├── startup_stm32f10x_hd_vl.s
+</span></span><span class="line"><span class="cl"> │   │               │   │   ├── startup_stm32f10x_ld.s
+</span></span><span class="line"><span class="cl"> │   │               │   │   ├── startup_stm32f10x_ld_vl.s
+</span></span><span class="line"><span class="cl"> │   │               │   │   ├── startup_stm32f10x_md.s
+</span></span><span class="line"><span class="cl"> │   │               │   │   ├── startup_stm32f10x_md_vl.s
+</span></span><span class="line"><span class="cl"> │   │               │   │   └── startup_stm32f10x_xl.s
+</span></span><span class="line"><span class="cl"> │   │               │   ├── gcc_ride7
+</span></span><span class="line"><span class="cl"> │   │               │   │   ├── startup_stm32f10x_cl.s
+</span></span><span class="line"><span class="cl"> │   │               │   │   ├── startup_stm32f10x_hd.s
+</span></span><span class="line"><span class="cl"> │   │               │   │   ├── startup_stm32f10x_hd_vl.s
+</span></span><span class="line"><span class="cl"> │   │               │   │   ├── startup_stm32f10x_ld.s
+</span></span><span class="line"><span class="cl"> │   │               │   │   ├── startup_stm32f10x_ld_vl.s
+</span></span><span class="line"><span class="cl"> │   │               │   │   ├── startup_stm32f10x_md.s
+</span></span><span class="line"><span class="cl"> │   │               │   │   ├── startup_stm32f10x_md_vl.s
+</span></span><span class="line"><span class="cl"> │   │               │   │   └── startup_stm32f10x_xl.s
+</span></span><span class="line"><span class="cl"> │   │               │   ├── iar
+</span></span><span class="line"><span class="cl"> │   │               │   │   ├── startup_stm32f10x_cl.s
+</span></span><span class="line"><span class="cl"> │   │               │   │   ├── startup_stm32f10x_hd.s
+</span></span><span class="line"><span class="cl"> │   │               │   │   ├── startup_stm32f10x_hd_vl.s
+</span></span><span class="line"><span class="cl"> │   │               │   │   ├── startup_stm32f10x_ld.s
+</span></span><span class="line"><span class="cl"> │   │               │   │   ├── startup_stm32f10x_ld_vl.s
+</span></span><span class="line"><span class="cl"> │   │               │   │   ├── startup_stm32f10x_md.s
+</span></span><span class="line"><span class="cl"> │   │               │   │   ├── startup_stm32f10x_md_vl.s
+</span></span><span class="line"><span class="cl"> │   │               │   │   └── startup_stm32f10x_xl.s
+</span></span><span class="line"><span class="cl"> │   │               │   └── TrueSTUDIO
+</span></span><span class="line"><span class="cl"> │   │               │       ├── startup_stm32f10x_cl.s
+</span></span><span class="line"><span class="cl"> │   │               │       ├── startup_stm32f10x_hd.s
+</span></span><span class="line"><span class="cl"> │   │               │       ├── startup_stm32f10x_hd_vl.s
+</span></span><span class="line"><span class="cl"> │   │               │       ├── startup_stm32f10x_ld.s
+</span></span><span class="line"><span class="cl"> │   │               │       ├── startup_stm32f10x_ld_vl.s
+</span></span><span class="line"><span class="cl"> │   │               │       ├── startup_stm32f10x_md.s
+</span></span><span class="line"><span class="cl"> │   │               │       ├── startup_stm32f10x_md_vl.s
+</span></span><span class="line"><span class="cl"> │   │               │       └── startup_stm32f10x_xl.s
+</span></span><span class="line"><span class="cl"> │   │               ├── stm32f10x.h
+</span></span><span class="line"><span class="cl"> │   │               ├── system_stm32f10x.c
+</span></span><span class="line"><span class="cl"> │   │               └── system_stm32f10x.h
+</span></span><span class="line"><span class="cl"> │   ├── CMSIS changes.htm
+</span></span><span class="line"><span class="cl"> │   ├── CMSIS debug support.htm
+</span></span><span class="line"><span class="cl"> │   ├── Documentation
+</span></span><span class="line"><span class="cl"> │   │   └── CMSIS_Core.htm
+</span></span><span class="line"><span class="cl"> │   └── License.doc
+</span></span><span class="line"><span class="cl"> └── STM32F10x_StdPeriph_Driver     // Cortex-M3 内核上外加的外设驱动代码
+</span></span><span class="line"><span class="cl">     ├── inc                        // include缩写
+</span></span><span class="line"><span class="cl">     │   ├── misc.h
+</span></span><span class="line"><span class="cl">     │   ├── stm32f10x_adc.h
+</span></span><span class="line"><span class="cl">     │   ├── stm32f10x_bkp.h
+</span></span><span class="line"><span class="cl">     │   ├── stm32f10x_can.h
+</span></span><span class="line"><span class="cl">     │   ├── stm32f10x_cec.h
+</span></span><span class="line"><span class="cl">     │   ├── stm32f10x_crc.h
+</span></span><span class="line"><span class="cl">     │   ├── stm32f10x_dac.h
+</span></span><span class="line"><span class="cl">     │   ├── stm32f10x_dbgmcu.h
+</span></span><span class="line"><span class="cl">     │   ├── stm32f10x_dma.h
+</span></span><span class="line"><span class="cl">     │   ├── stm32f10x_exti.h
+</span></span><span class="line"><span class="cl">     │   ├── stm32f10x_flash.h
+</span></span><span class="line"><span class="cl">     │   ├── stm32f10x_fsmc.h
+</span></span><span class="line"><span class="cl">     │   ├── stm32f10x_gpio.h
+</span></span><span class="line"><span class="cl">     │   ├── stm32f10x_i2c.h
+</span></span><span class="line"><span class="cl">     │   ├── stm32f10x_iwdg.h
+</span></span><span class="line"><span class="cl">     │   ├── stm32f10x_pwr.h
+</span></span><span class="line"><span class="cl">     │   ├── stm32f10x_rcc.h
+</span></span><span class="line"><span class="cl">     │   ├── stm32f10x_rtc.h
+</span></span><span class="line"><span class="cl">     │   ├── stm32f10x_sdio.h
+</span></span><span class="line"><span class="cl">     │   ├── stm32f10x_spi.h
+</span></span><span class="line"><span class="cl">     │   ├── stm32f10x_tim.h
+</span></span><span class="line"><span class="cl">     │   ├── stm32f10x_usart.h
+</span></span><span class="line"><span class="cl">     │   └── stm32f10x_wwdg.h
+</span></span><span class="line"><span class="cl">     ├── LICENSE.txt
+</span></span><span class="line"><span class="cl">     ├── Release_Notes.html
+</span></span><span class="line"><span class="cl">     └── src                        // source 缩写
+</span></span><span class="line"><span class="cl">         ├── misc.c
+</span></span><span class="line"><span class="cl">         ├── stm32f10x_adc.c
+</span></span><span class="line"><span class="cl">         ├── stm32f10x_bkp.c
+</span></span><span class="line"><span class="cl">         ├── stm32f10x_can.c
+</span></span><span class="line"><span class="cl">         ├── stm32f10x_cec.c
+</span></span><span class="line"><span class="cl">         ├── stm32f10x_crc.c
+</span></span><span class="line"><span class="cl">         ├── stm32f10x_dac.c
+</span></span><span class="line"><span class="cl">         ├── stm32f10x_dbgmcu.c
+</span></span><span class="line"><span class="cl">         ├── stm32f10x_dma.c
+</span></span><span class="line"><span class="cl">         ├── stm32f10x_exti.c
+</span></span><span class="line"><span class="cl">         ├── stm32f10x_flash.c
+</span></span><span class="line"><span class="cl">         ├── stm32f10x_fsmc.c
+</span></span><span class="line"><span class="cl">         ├── stm32f10x_gpio.c
+</span></span><span class="line"><span class="cl">         ├── stm32f10x_i2c.c
+</span></span><span class="line"><span class="cl">         ├── stm32f10x_iwdg.c
+</span></span><span class="line"><span class="cl">         ├── stm32f10x_pwr.c
+</span></span><span class="line"><span class="cl">         ├── stm32f10x_rcc.c
+</span></span><span class="line"><span class="cl">         ├── stm32f10x_rtc.c
+</span></span><span class="line"><span class="cl">         ├── stm32f10x_sdio.c
+</span></span><span class="line"><span class="cl">         ├── stm32f10x_spi.c
+</span></span><span class="line"><span class="cl">         ├── stm32f10x_tim.c
+</span></span><span class="line"><span class="cl">         ├── stm32f10x_usart.c
+</span></span><span class="line"><span class="cl">         └── stm32f10x_wwdg.c</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="project文件夹">Project文件夹</h4>
+<div class="highlight" id="id-3"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">Project
+</span></span><span class="line"><span class="cl"> ├── STM32F10x_StdPeriph_Examples
+</span></span><span class="line"><span class="cl"> └── STM32F10x_StdPeriph_Template</span></span></code></pre></td></tr></table>
+</div>
+</div><h5 id="stm32f10x_stdperiph_template-文件夹">STM32F10x_StdPeriph_Template 文件夹</h5>
+<div class="highlight" id="id-4"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">STM32F10x_StdPeriph_Template
+</span></span><span class="line"><span class="cl"> ├── EWARM
+</span></span><span class="line"><span class="cl"> ├── HiTOP
+</span></span><span class="line"><span class="cl"> ├── LICENSE.txt
+</span></span><span class="line"><span class="cl"> ├── main.c
+</span></span><span class="line"><span class="cl"> ├── MDK-ARM
+</span></span><span class="line"><span class="cl"> ├── Release_Notes.html
+</span></span><span class="line"><span class="cl"> ├── RIDE
+</span></span><span class="line"><span class="cl"> ├── stm32f10x_conf.h       // 外设头文件配置文件  
+</span></span><span class="line"><span class="cl"> ├── stm32f10x_it.c         // 中断函数文件
+</span></span><span class="line"><span class="cl"> ├── stm32f10x_it.h
+</span></span><span class="line"><span class="cl"> ├── system_stm32f10x.c     // 更改程序的时钟配置,根据 HSE 或者 HSI 设置系统时钟和总线时钟(AHB, APBI, APB2总线).
+</span></span><span class="line"><span class="cl"> └── TrueSTUDIO</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="startup_stm32xxxxxs-文件">startup_stm32xxxxx.s 文件</h3>
+<ul>
+<li>startup_stm32xxxxx.s的文件中使用汇编语言写好了基本程序，当STM32芯片上电启动的时候，首先会执行这里的汇编程序，从而建立C语言的运行环境，所以这个文件称为<strong>启动文件</strong>.</li>
+<li>startup_stm32xxxxx.s 文件功能:
+<ul>
+<li>初始化堆栈指针SP.</li>
+<li>初始化程序计数器指针PC.</li>
+<li>设置堆和栈的大小.</li>
+<li>设置中断向量表的入口地址.</li>
+<li>配置外部SRAM作为数据存储器(由用户配置, 一般的开发板没有外部SRAM).</li>
+<li>调用SystemInit()函数配置 STM32 的系统时钟.</li>
+<li>设置C库的分支入口“__main”(最终用来调用main函数).</li>
+</ul>
+</li>
+</ul>
+<h3 id="stm32f4xxh-文件">stm32f4xx.h 文件</h3>
+<ul>
+<li>根据 STM32 的存储分配先定义好各个寄存器的地址,把这些地址定义都统一写在 stm32f4xx.h 文件中.</li>
+</ul>
+<h3 id="mainc-文件">main.c 文件</h3></div><div class="post-footer" id="post-footer">
+  <div class="post-info">
+    <div class="post-info-line">
+      <div class="post-info-mod">
+        <span title="更新于 2023-12-04 15:43:23">更新于 2023-12-04&nbsp;</span>
+      </div></div>
+    <div class="post-info-line">
+      <div class="post-info-md"><span><a href="https://github.com/Yhj123/wiki_blog/posts%5c%e5%b5%8c%e5%85%a5%e5%bc%8f%5cSTM32%5cSTM32%e5%b7%a5%e7%a8%8b%e7%bb%93%e6%9e%84%e4%bb%a5%e5%8f%8a%e5%bc%80%e5%8f%91%e6%b5%81%e7%a8%8b.md" title="编辑此页"target="_blank" rel="external nofollow noopener noreferrer" class="link-to-edit">编辑此页</a></span></div>
+      <div class="post-info-share">
+        <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://yhj123.github.io/posts/%E5%B5%8C%E5%85%A5%E5%BC%8F/stm32/stm32%E5%B7%A5%E7%A8%8B%E7%BB%93%E6%9E%84%E4%BB%A5%E5%8F%8A%E5%BC%80%E5%8F%91%E6%B5%81%E7%A8%8B/" data-title="STM32工程结构以及开发流程" data-hashtags="STM32"><i class="fa-brands fa-twitter fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://yhj123.github.io/posts/%E5%B5%8C%E5%85%A5%E5%BC%8F/stm32/stm32%E5%B7%A5%E7%A8%8B%E7%BB%93%E6%9E%84%E4%BB%A5%E5%8F%8A%E5%BC%80%E5%8F%91%E6%B5%81%E7%A8%8B/" data-hashtag="STM32"><i class="fa-brands fa-facebook-square fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://yhj123.github.io/posts/%E5%B5%8C%E5%85%A5%E5%BC%8F/stm32/stm32%E5%B7%A5%E7%A8%8B%E7%BB%93%E6%9E%84%E4%BB%A5%E5%8F%8A%E5%BC%80%E5%8F%91%E6%B5%81%E7%A8%8B/" data-title="STM32工程结构以及开发流程"><i class="fa-brands fa-weibo fa-fw" aria-hidden="true"></i></a>
+  </span>
+      </div>
+    </div>
+  </div>
+
+  <div class="post-info-more">
+    <section class="post-tags"><i class="fa-solid fa-tags fa-fw me-1" aria-hidden="true"></i><a href='/tags/stm32/' class="post-tag">STM32</a></section>
+    <section>
+      <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+    </section>
+  </div>
+
+  <div class="post-nav"><a href="/posts/%E5%89%8D%E7%AB%AF/electron/snows/" class="post-nav-item" rel="prev" title="Electron环境搭建"><i class="fa-solid fa-angle-left fa-fw" aria-hidden="true"></i>Electron环境搭建</a></div>
+</div>
+</article></main><footer class="footer">
+    <div class="footer-container"><div class="footer-line powered">由 <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreferrer" title="Hugo 0.111.3">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/hugo-fixit/FixIt" target="_blank" rel="external" title="FixIt v0.2.18-lts.4"><img class="fixit-icon" src="/fixit.min.svg" alt="FixIt logo" />&nbsp;FixIt</a>
+        </div><div class="footer-line copyright" itemscope itemtype="http://schema.org/CreativeWork"><i class="fa-regular fa-copyright fa-fw" aria-hidden="true"></i>
+            <span itemprop="copyrightYear">2023</span><span class="author" itemprop="copyrightHolder">
+              <a href="/"></a></span></div><div class="footer-line statistics"></div></div>
+  </footer></div><div class="widgets"><div class="fixed-buttons animate__faster d-none"><div class="fixed-button back-to-top" role="button" aria-label="回到顶部"><i class="fa-solid fa-arrow-up fa-fw" aria-hidden="true"></i><span class="variant-numeric d-none">0%</span>
+        </div></div><div id="mask"></div><noscript>
+    <div class="noscript-warning">FixIt 主题在启用 JavaScript 的情况下效果最佳。</div>
+  </noscript>
+</div><link rel="stylesheet" href="/lib/pace/themes/blue/pace-theme-minimal.css"><script src="/lib/autocomplete/autocomplete.min.js" defer></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0.12/dist/fancybox.css">
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0.12/dist/fancybox.umd.js"></script>
+
+
+<script src="https://unpkg.com/typeit@8.7.1/dist/index.umd.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    
+    const matchingSummary = document.querySelector(".ai-explanation-content").textContent;
+    new TypeIt("#ai-explanation", {
+        strings: matchingSummary,
+        speed: 50,
+        lifeLike: true,
+        waitUntilVisible: true,
+    }).go();
+});
+</script><script src="/lib/algoliasearch/algoliasearch-lite.umd.min.js" defer></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0.12/dist/fancybox.css">
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0.12/dist/fancybox.umd.js"></script>
+
+
+<script src="https://unpkg.com/typeit@8.7.1/dist/index.umd.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    
+    const matchingSummary = document.querySelector(".ai-explanation-content").textContent;
+    new TypeIt("#ai-explanation", {
+        strings: matchingSummary,
+        speed: 50,
+        lifeLike: true,
+        waitUntilVisible: true,
+    }).go();
+});
+</script><script src="/lib/sharer/sharer.min.js" async defer></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0.12/dist/fancybox.css">
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0.12/dist/fancybox.umd.js"></script>
+
+
+<script src="https://unpkg.com/typeit@8.7.1/dist/index.umd.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    
+    const matchingSummary = document.querySelector(".ai-explanation-content").textContent;
+    new TypeIt("#ai-explanation", {
+        strings: matchingSummary,
+        speed: 50,
+        lifeLike: true,
+        waitUntilVisible: true,
+    }).go();
+});
+</script><script src="/lib/pace/pace.min.js" async defer></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0.12/dist/fancybox.css">
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0.12/dist/fancybox.umd.js"></script>
+
+
+<script src="https://unpkg.com/typeit@8.7.1/dist/index.umd.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    
+    const matchingSummary = document.querySelector(".ai-explanation-content").textContent;
+    new TypeIt("#ai-explanation", {
+        strings: matchingSummary,
+        speed: 50,
+        lifeLike: true,
+        waitUntilVisible: true,
+    }).go();
+});
+</script><script>window.config={"code":{"copyTitle":"复制到剪贴板","editLockTitle":"锁定可编辑代码块","editUnLockTitle":"解锁可编辑代码块","editable":true,"maxShownLines":10},"comment":{"enable":false},"search":{"algoliaAppID":"BA11HJWN6Y","algoliaIndex":"yhjedward","algoliaSearchKey":"adfbb624ce386a7ae198d4ee999d8e63","highlightTag":"em","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":30,"type":"algolia"}};</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0.12/dist/fancybox.css">
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0.12/dist/fancybox.umd.js"></script>
+
+
+<script src="https://unpkg.com/typeit@8.7.1/dist/index.umd.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    
+    const matchingSummary = document.querySelector(".ai-explanation-content").textContent;
+    new TypeIt("#ai-explanation", {
+        strings: matchingSummary,
+        speed: 50,
+        lifeLike: true,
+        waitUntilVisible: true,
+    }).go();
+});
+</script><script src="/js/theme.min.js" defer></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0.12/dist/fancybox.css">
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0.12/dist/fancybox.umd.js"></script>
+
+
+<script src="https://unpkg.com/typeit@8.7.1/dist/index.umd.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    
+    const matchingSummary = document.querySelector(".ai-explanation-content").textContent;
+    new TypeIt("#ai-explanation", {
+        strings: matchingSummary,
+        speed: 50,
+        lifeLike: true,
+        waitUntilVisible: true,
+    }).go();
+});
+</script></body>
+</html>

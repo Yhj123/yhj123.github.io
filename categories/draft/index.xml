@@ -5,26 +5,18 @@
     <description>draft - 分类 - Wiki</description>
     <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Sat, 18 Nov 2023 11:36:41 &#43;0800</lastBuildDate><atom:link href="https://yhj123.github.io/categories/draft/" rel="self" type="application/rss+xml" /><item>
   <title>Test</title>
-  <link>https://yhj123.github.io/posts/java/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/test/</link>
+  <link>https://yhj123.github.io/posts/%E5%90%8E%E7%AB%AF/java/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/test/</link>
   <pubDate>Sat, 18 Nov 2023 11:36:41 &#43;0800</pubDate>
   <author>作者</author>
-  <guid>https://yhj123.github.io/posts/java/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/test/</guid>
+  <guid>https://yhj123.github.io/posts/%E5%90%8E%E7%AB%AF/java/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/test/</guid>
   <description><![CDATA[链接设计模式 链接设计模式]]></description>
 </item>
 <item>
-  <title>ref关键字</title>
-  <link>https://yhj123.github.io/posts/csharp/ref%E5%85%B3%E9%94%AE%E5%AD%97/</link>
-  <pubDate>Sat, 18 Nov 2023 11:22:25 &#43;0800</pubDate>
-  <author>作者</author>
-  <guid>https://yhj123.github.io/posts/csharp/ref%E5%85%B3%E9%94%AE%E5%AD%97/</guid>
-  <description><![CDATA[链接 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 #include &lt;stdio.h&gt; #include &lt;winsock2.h&gt; #pragma comment(lib, &#34;ws2_32&#34;) void bigOrSmall() { int byte = 0x12345678; byte = htonl(byte); /* 1位十六进制数可以用4位二进制数来表示 16进制1位 = 2进制4位]]></description>
-</item>
-<item>
   <title>太空气候建模</title>
-  <link>https://yhj123.github.io/posts/scientificamerican/%E5%A4%AA%E7%A9%BA%E6%B0%94%E5%80%99%E5%BB%BA%E6%A8%A1/</link>
+  <link>https://yhj123.github.io/posts/%E8%8B%B1%E6%96%87/scientificamerican/%E5%A4%AA%E7%A9%BA%E6%B0%94%E5%80%99%E5%BB%BA%E6%A8%A1/</link>
   <pubDate>Sat, 18 Nov 2023 11:22:25 &#43;0800</pubDate>
   <author>作者</author>
-  <guid>https://yhj123.github.io/posts/scientificamerican/%E5%A4%AA%E7%A9%BA%E6%B0%94%E5%80%99%E5%BB%BA%E6%A8%A1/</guid>
+  <guid>https://yhj123.github.io/posts/%E8%8B%B1%E6%96%87/scientificamerican/%E5%A4%AA%E7%A9%BA%E6%B0%94%E5%80%99%E5%BB%BA%E6%A8%A1/</guid>
   <description><![CDATA[太空气候建模 链接 科学60s]]></description>
 </item>
 </channel>

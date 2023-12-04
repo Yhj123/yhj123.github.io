@@ -1,0 +1,15 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+  <channel>
+    <title>Electron - 分类 - Wiki</title>
+    <link>https://yhj123.github.io/categories/electron/</link>
+    <description>Electron - 分类 - Wiki</description>
+    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Fri, 01 Dec 2023 15:53:55 &#43;0800</lastBuildDate><atom:link href="https://yhj123.github.io/categories/electron/" rel="self" type="application/rss+xml" /><item>
+  <title>Electron环境搭建</title>
+  <link>https://yhj123.github.io/posts/%E5%89%8D%E7%AB%AF/electron/snows/</link>
+  <pubDate>Fri, 01 Dec 2023 15:53:55 &#43;0800</pubDate>
+  <author>作者</author>
+  <guid>https://yhj123.github.io/posts/%E5%89%8D%E7%AB%AF/electron/snows/</guid>
+  <description><![CDATA[]]></description>
+</item>
+</channel>
+</rss>

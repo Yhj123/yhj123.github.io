@@ -1,0 +1,23 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+  <channel>
+    <title>linux命令 - 分类 - Wiki</title>
+    <link>https://yhj123.github.io/categories/linux%E5%91%BD%E4%BB%A4/</link>
+    <description>linux命令 - 分类 - Wiki</description>
+    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Fri, 24 Nov 2023 17:57:13 &#43;0800</lastBuildDate><atom:link href="https://yhj123.github.io/categories/linux%E5%91%BD%E4%BB%A4/" rel="self" type="application/rss+xml" /><item>
+  <title>Nohup命令</title>
+  <link>https://yhj123.github.io/posts/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/linux/linux%E5%91%BD%E4%BB%A4/nohup%E5%91%BD%E4%BB%A4/</link>
+  <pubDate>Fri, 24 Nov 2023 17:57:13 &#43;0800</pubDate>
+  <author>作者</author>
+  <guid>https://yhj123.github.io/posts/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/linux/linux%E5%91%BD%E4%BB%A4/nohup%E5%91%BD%E4%BB%A4/</guid>
+  <description><![CDATA[]]></description>
+</item>
+<item>
+  <title>CP命令与SCP命令</title>
+  <link>https://yhj123.github.io/posts/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/linux/linux%E5%91%BD%E4%BB%A4/cp%E5%91%BD%E4%BB%A4%E4%B8%8Escp%E5%91%BD%E4%BB%A4/</link>
+  <pubDate>Wed, 22 Nov 2023 16:28:00 &#43;0800</pubDate>
+  <author>作者</author>
+  <guid>https://yhj123.github.io/posts/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/linux/linux%E5%91%BD%E4%BB%A4/cp%E5%91%BD%E4%BB%A4%E4%B8%8Escp%E5%91%BD%E4%BB%A4/</guid>
+  <description><![CDATA[]]></description>
+</item>
+</channel>
+</rss>

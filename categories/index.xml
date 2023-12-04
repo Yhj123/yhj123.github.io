@@ -3,12 +3,60 @@
     <title>Categories - 分类 - Wiki</title>
     <link>https://yhj123.github.io/categories/</link>
     <description>Categories - 分类 - Wiki</description>
-    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Sat, 18 Nov 2023 11:36:41 &#43;0800</lastBuildDate><atom:link href="https://yhj123.github.io/categories/" rel="self" type="application/rss+xml" /><item>
+    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Mon, 04 Dec 2023 15:43:23 &#43;0800</lastBuildDate><atom:link href="https://yhj123.github.io/categories/" rel="self" type="application/rss+xml" /><item>
+  <title>嵌入式</title>
+  <link>https://yhj123.github.io/categories/%E5%B5%8C%E5%85%A5%E5%BC%8F/</link>
+  <pubDate>Mon, 04 Dec 2023 15:43:23 &#43;0800</pubDate>
+  <author>作者</author>
+  <guid>https://yhj123.github.io/categories/%E5%B5%8C%E5%85%A5%E5%BC%8F/</guid>
+  <description><![CDATA[]]></description>
+</item>
+<item>
+  <title>Electron</title>
+  <link>https://yhj123.github.io/categories/electron/</link>
+  <pubDate>Fri, 01 Dec 2023 15:53:55 &#43;0800</pubDate>
+  <author>作者</author>
+  <guid>https://yhj123.github.io/categories/electron/</guid>
+  <description><![CDATA[]]></description>
+</item>
+<item>
+  <title>linux命令</title>
+  <link>https://yhj123.github.io/categories/linux%E5%91%BD%E4%BB%A4/</link>
+  <pubDate>Fri, 24 Nov 2023 17:57:13 &#43;0800</pubDate>
+  <author>作者</author>
+  <guid>https://yhj123.github.io/categories/linux%E5%91%BD%E4%BB%A4/</guid>
+  <description><![CDATA[]]></description>
+</item>
+<item>
+  <title>linux源码学习</title>
+  <link>https://yhj123.github.io/categories/linux%E6%BA%90%E7%A0%81%E5%AD%A6%E4%B9%A0/</link>
+  <pubDate>Tue, 21 Nov 2023 16:50:35 &#43;0800</pubDate>
+  <author>作者</author>
+  <guid>https://yhj123.github.io/categories/linux%E6%BA%90%E7%A0%81%E5%AD%A6%E4%B9%A0/</guid>
+  <description><![CDATA[]]></description>
+</item>
+<item>
+  <title>cplusplus</title>
+  <link>https://yhj123.github.io/categories/cplusplus/</link>
+  <pubDate>Mon, 20 Nov 2023 20:24:11 &#43;0800</pubDate>
+  <author>作者</author>
+  <guid>https://yhj123.github.io/categories/cplusplus/</guid>
+  <description><![CDATA[]]></description>
+</item>
+<item>
   <title>draft</title>
   <link>https://yhj123.github.io/categories/draft/</link>
   <pubDate>Sat, 18 Nov 2023 11:36:41 &#43;0800</pubDate>
   <author>作者</author>
   <guid>https://yhj123.github.io/categories/draft/</guid>
+  <description><![CDATA[]]></description>
+</item>
+<item>
+  <title>CSharp</title>
+  <link>https://yhj123.github.io/categories/csharp/</link>
+  <pubDate>Sat, 18 Nov 2023 11:22:25 &#43;0800</pubDate>
+  <author>作者</author>
+  <guid>https://yhj123.github.io/categories/csharp/</guid>
   <description><![CDATA[]]></description>
 </item>
 <item>
